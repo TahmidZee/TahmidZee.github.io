@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Learning-based path planning map</title>
+  <desc id="desc">A planned route curves through a grid of obstacles from a start point to a target.</desc>
+  <rect width="960" height="540" fill="#101b2b"/>
+  <g stroke="#29425f" stroke-width="2" opacity=".7">
+    <path d="M80 60v380M160 60v380M240 60v380M320 60v380M400 60v380M480 60v380M560 60v380M640 60v380M720 60v380M800 60v380M880 60v380"/>
+    <path d="M80 60h800M80 136h800M80 212h800M80 288h800M80 364h800M80 440h800"/>
+  </g>
+  <g fill="#314c68">
+    <rect x="242" y="62" width="76" height="148" rx="8"/>
+    <rect x="402" y="214" width="76" height="148" rx="8"/>
+    <rect x="642" y="62" width="76" height="224" rx="8"/>
+    <rect x="722" y="366" width="156" height="72" rx="8"/>
+  </g>
+  <path d="M120 400C180 330 140 235 280 250S360 415 520 390 540 205 610 330 735 325 830 115" fill="none" stroke="#70e1b4" stroke-width="12" stroke-linecap="round" stroke-dasharray="1 22"/>
+  <circle cx="120" cy="400" r="22" fill="#f7b955"/>
+  <circle cx="830" cy="115" r="28" fill="none" stroke="#ff6f91" stroke-width="10"/>
+  <g font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="480" y="490" fill="#f5f8ff" font-size="34" font-weight="700">LEARNING + STRUCTURED PLANNING</text>
+    <text x="480" y="523" fill="#9fb4ca" font-size="20">adaptation, constraints, and path quality</text>
+  </g>
+</svg>

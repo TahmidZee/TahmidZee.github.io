@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Hybrid RIS localization diagram</title>
+  <desc id="desc">A radio source reflects from an intelligent surface toward an antenna array, with learned covariance and MVDR processing blocks.</desc>
+  <rect width="960" height="540" fill="#071426"/>
+  <g fill="none" stroke="#42d3bd" stroke-width="6">
+    <path d="M125 390 Q310 100 475 260"/>
+    <path d="M475 260 Q650 80 830 205"/>
+    <path d="M475 260 Q655 385 830 335" opacity=".55"/>
+  </g>
+  <g fill="#f4b860">
+    <circle cx="125" cy="390" r="20"/>
+    <path d="M85 365q40-55 80 0M65 340q60-90 120 0" fill="none" stroke="#f4b860" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(438 145)">
+    <rect width="74" height="230" rx="8" fill="#183b58" stroke="#7ee8fa" stroke-width="4"/>
+    <g fill="#7ee8fa">
+      <circle cx="19" cy="23" r="6"/><circle cx="54" cy="23" r="6"/>
+      <circle cx="19" cy="60" r="6"/><circle cx="54" cy="60" r="6"/>
+      <circle cx="19" cy="97" r="6"/><circle cx="54" cy="97" r="6"/>
+      <circle cx="19" cy="134" r="6"/><circle cx="54" cy="134" r="6"/>
+      <circle cx="19" cy="171" r="6"/><circle cx="54" cy="171" r="6"/>
+      <circle cx="19" cy="208" r="6"/><circle cx="54" cy="208" r="6"/>
+    </g>
+  </g>
+  <g transform="translate(810 150)" fill="#d9efff">
+    <rect x="0" y="0" width="14" height="240" rx="7"/>
+    <rect x="28" y="25" width="14" height="190" rx="7"/>
+    <rect x="56" y="50" width="14" height="140" rx="7"/>
+  </g>
+  <g font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="480" y="462" fill="#e9f3ff" font-size="34" font-weight="700">LEARNED COVARIANCE + MVDR</text>
+    <text x="480" y="503" fill="#9eb8cf" font-size="22">structure-aware, K-free localization</text>
+  </g>
+</svg>

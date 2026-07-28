@@ -1,0 +1,84 @@
+{% comment %}
+  Preserve al-search while keeping its component graph off the initial page
+  load. The generated search index stays in an inert template until someone
+  clicks Search or presses Command/Ctrl+K.
+{% endcomment %}
+{% capture portfolio_search_assets %}
+  {% al_search_assets %}
+{% endcapture %}
+
+<template id="portfolio-search-assets">{{ portfolio_search_assets }}</template>
+<script>
+  (() => {
+    const template = document.getElementById('portfolio-search-assets');
+    const searchToggle = document.getElementById('search-toggle');
+    let searchPromise;
+    let searchReady = false;
+
+    const installSearchAssets = () => {
+      if (searchPromise) return searchPromise;
+
+      searchPromise = (async () => {
+        const fragment = template.content;
+        const nodes = Array.from(fragment.childNodes);
+
+        for (const node of nodes) {
+          if (node.nodeName !== 'SCRIPT') {
+            document.body.append(node.cloneNode(true));
+            continue;
+          }
+
+          const script = document.createElement('script');
+          for (const attribute of node.attributes) {
+            script.setAttribute(attribute.name, attribute.value);
+          }
+
+          if (node.src) {
+            await new Promise((resolve, reject) => {
+              script.addEventListener('load', resolve, { once: true });
+              script.addEventListener('error', reject, { once: true });
+              document.body.append(script);
+            });
+          } else {
+            script.textContent = node.textContent;
+            document.body.append(script);
+          }
+        }
+
+        if (window.customElements && customElements.get('ninja-keys') === undefined) {
+          await customElements.whenDefined('ninja-keys');
+        }
+
+        searchReady = true;
+        template.remove();
+      })();
+
+      return searchPromise;
+    };
+
+    const openSearch = async () => {
+      await installSearchAssets();
+      if (typeof window.openSearchModal === 'function') {
+        window.openSearchModal();
+      }
+    };
+
+    const handleSearchClick = (event) => {
+      if (searchReady) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openSearch();
+    };
+
+    const handleSearchShortcut = (event) => {
+      if (event.key.toLowerCase() !== 'k' || (!event.metaKey && !event.ctrlKey)) return;
+      if (searchReady) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openSearch();
+    };
+
+    searchToggle?.addEventListener('click', handleSearchClick);
+    window.addEventListener('keydown', handleSearchShortcut, true);
+  })();
+</script>

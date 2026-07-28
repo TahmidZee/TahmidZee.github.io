@@ -39,11 +39,15 @@ I am interested in research scientist internships and collaborations involving w
 
 ## Technical toolkit
 
+<div class="table-responsive" markdown="1">
+
 | Area                            | Methods and tools                                                                                                        |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | Wireless and signal processing  | RIS/IRS, near-field localization, MUSIC/MVDR, AoA and range estimation, V2X, modulation classification                   |
 | Machine learning                | PyTorch, deep learning, transformers, CNNs, representation learning, reinforcement learning, hyperparameter optimization |
 | Programming and experimentation | Python, MATLAB, NumPy, reproducible pipelines, Git/GitHub, Linux                                                         |
 | Networking and systems          | Cellular and wireless networking, IoT, network security, performance and anomaly analysis                                |
+
+</div>
 
 [Explore my research]({% link _pages/research.md %}) · [View publications]({% link _pages/publications.md %}) · [See selected projects]({% link _pages/projects.md %})

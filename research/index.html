@@ -27,7 +27,7 @@
   };
 </script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
     addBackToTop();
-  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+  </script> <template id="portfolio-search-assets"> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
 // get the ninja-keys element
 const ninja = document.querySelector('ninja-keys');
 
@@ -192,4 +192,77 @@ ninja.data = [{
       },
     },];
 
-</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </template> <script>
+  (() => {
+    const template = document.getElementById('portfolio-search-assets');
+    const searchToggle = document.getElementById('search-toggle');
+    let searchPromise;
+    let searchReady = false;
+
+    const installSearchAssets = () => {
+      if (searchPromise) return searchPromise;
+
+      searchPromise = (async () => {
+        const fragment = template.content;
+        const nodes = Array.from(fragment.childNodes);
+
+        for (const node of nodes) {
+          if (node.nodeName !== 'SCRIPT') {
+            document.body.append(node.cloneNode(true));
+            continue;
+          }
+
+          const script = document.createElement('script');
+          for (const attribute of node.attributes) {
+            script.setAttribute(attribute.name, attribute.value);
+          }
+
+          if (node.src) {
+            await new Promise((resolve, reject) => {
+              script.addEventListener('load', resolve, { once: true });
+              script.addEventListener('error', reject, { once: true });
+              document.body.append(script);
+            });
+          } else {
+            script.textContent = node.textContent;
+            document.body.append(script);
+          }
+        }
+
+        if (window.customElements && customElements.get('ninja-keys') === undefined) {
+          await customElements.whenDefined('ninja-keys');
+        }
+
+        searchReady = true;
+        template.remove();
+      })();
+
+      return searchPromise;
+    };
+
+    const openSearch = async () => {
+      await installSearchAssets();
+      if (typeof window.openSearchModal === 'function') {
+        window.openSearchModal();
+      }
+    };
+
+    const handleSearchClick = (event) => {
+      if (searchReady) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openSearch();
+    };
+
+    const handleSearchShortcut = (event) => {
+      if (event.key.toLowerCase() !== 'k' || (!event.metaKey && !event.ctrlKey)) return;
+      if (searchReady) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openSearch();
+    };
+
+    searchToggle?.addEventListener('click', handleSearchClick);
+    window.addEventListener('keydown', handleSearchShortcut, true);
+  })();
+</script> </body> </html>

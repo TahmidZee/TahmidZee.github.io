@@ -7,4 +7,11 @@ overrides:
     upstream_path: _includes/header.liquid
     upstream_sha256: c8663513baded68d9fa5fbe4d6363a976535bbe201efe5138243d0ff03101058
     local_sha256: a3b8accdcfc9ba9b01982cdd2664b5e41c8990914fc4d4b68d36a6128a8c05ee
-    acknowledged_at: "2026-07-28"
+    acknowledged_at: '2026-07-28'
+  _includes/plugins/al_icons_styles.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.11
+    upstream_path: _includes/plugins/al_icons_styles.liquid
+    upstream_sha256: e3c567b0038de0e0fff7d6c0225bebeb276ede075b2cfc7098075c7361109832
+    local_sha256: fb1a8884c69ff22ca5280ef8656b3bdd375739433317216fd2d20a1205fbb35d
+    acknowledged_at: '2026-07-28'

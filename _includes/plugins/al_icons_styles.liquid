@@ -1,0 +1,34 @@
+{% comment %}
+  Keep the theme's full icon library while preventing decorative icon CSS from
+  delaying the first content paint. The noscript fallback preserves icons when
+  JavaScript is unavailable.
+{% endcomment %}
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+{% assign portfolio_icon_libraries = 'fontawesome,academicons,scholar-icons' | split: ',' %}
+{% for library in portfolio_icon_libraries %}
+  {% assign icon_config = site.third_party_libraries[library] %}
+  {% assign icon_stylesheet = icon_config.url.css %}
+  {% if icon_stylesheet != blank %}
+    <link
+      rel="preload"
+      as="style"
+      href="{{ icon_stylesheet }}"
+      {% if icon_config.integrity.css %}
+        integrity="{{ icon_config.integrity.css }}"
+      {% endif %}
+      crossorigin="anonymous"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="{{ icon_stylesheet }}"
+        {% if icon_config.integrity.css %}
+          integrity="{{ icon_config.integrity.css }}"
+        {% endif %}
+        crossorigin="anonymous"
+      >
+    </noscript>
+  {% endif %}
+{% endfor %}

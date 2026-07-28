@@ -1,189 +1,198 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Tahmid Zaman Tahi
+  label: PhD Researcher in Wireless AI
+  email: tahi.tahmid@gmail.com
+  location: Virginia, USA
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: PhD student working on learning-enabled wireless systems, signal processing, localization, and trustworthy connected vehicles.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: TahmidZee
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: tahmid-zaman-tahi-a16083213
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
+      - institution: Virginia Commonwealth University
+        location: Richmond, Virginia, USA
+        url: https://egr.vcu.edu/departments/electrical/
+        area: Electrical and Computer Engineering
         studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+        start_date: 2025
+        end_date: present
         highlights:
-          - Description 1.
-          - Description 2.
+          - Research focus on intelligent reflective surface-assisted wireless communications.
+          - Interests include wireless localization, signal processing, machine learning, and connected systems.
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: The George Washington University
+        location: Washington, District of Columbia, USA
+        url: https://www.ece.seas.gwu.edu/
+        area: Electrical Engineering
+        studyType: Master of Science
+        start_date: 2023
+        end_date: 2024
         highlights:
-          - Description 1.
-          - Description 2.
+          - Graduate Fellowship Award.
+          - Coursework included stochastic processes, machine intelligence, reinforcement learning, wireless networks, communication theory, and digital signal processing.
 
-    Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - institution: Islamic University of Technology
+        location: Gazipur, Bangladesh
+        url: https://www.iutoic-dhaka.edu/
+        area: Electrical and Electronic Engineering
+        studyType: Bachelor of Science
+        start_date: 2017
+        end_date: 2021
         highlights:
-          - Relativity
-          - Description 2.
-
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
-        highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+          - Undergraduate thesis on low-latency HARQ retransmission for C-V2X sidelink communication.
+          - OIC Scholarship recipient.
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: Context-Aware Functional Security for V2X-Enabled Connected Vehicles
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - Tahmid Zaman Tahi
+          - Sujay Saha
+          - Mostafa Zaman
+          - Yanxiao Zhao
+          - Sherif Abdelwahed
+        publisher: 2026 IEEE Transportation Electrification Conference & Expo
+        releaseDate: 2026
+        url: https://epapers2.org/itec2026/ESR/session_view.php?print=1&session_id=31
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+      - title: Enhancing IRS Localization via Deep Learning-Based AOA and Distance Estimation
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+          - Nikhila Kotlapara Surendran
+          - Syed Samiul Alam
+          - Haolin Tang
+          - Tahmid Tahi
+          - Wei Wang
+          - Yanxiao Zhao
+        publisher: Journal of AI-Driven Communication Engineering
+        releaseDate: 2025-11-10
+        url: https://doi.org/10.31875/2979-1081.2025.01.03
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+      - title: "Resource Allocation in C-V2X: A Review"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+          - Tahmid Zaman Tahi
+        publisher: arXiv
+        releaseDate: 2024-01-28
+        url: https://arxiv.org/abs/2401.15756
+
+      - title: HARQ Retransmission Together With Original Transmission on the Same Subframe for C-V2X Communication
+        authors:
+          - K. M. A. Yeaser
+          - M. A. H. Emon
+          - Tahmid Zaman Tahi
+          - I. R. Aninda
+        publisher: Islamic University of Technology
+        releaseDate: 2021
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Wireless Communications and Signal Processing
+        level: Research
+        icon: fa-solid fa-signal
+        keywords: "RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, V2X, modulation classification"
+        highlights:
+          - RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, V2X, and modulation classification.
+
+      - name: Machine Learning
+        level: Research
+        icon: fa-solid fa-brain
+        keywords: "PyTorch, CNNs, transformers, reinforcement learning, representation learning, hyperparameter optimization"
+        highlights:
+          - PyTorch, CNNs, transformers, reinforcement learning, representation learning, and hyperparameter optimization.
+
+      - name: Programming and Experimentation
+        level: Advanced
+        icon: fa-solid fa-code
+        keywords: "Python, MATLAB, NumPy, Git, Linux, reproducible research pipelines"
+        highlights:
+          - Python, MATLAB, NumPy, Git, Linux, and reproducible research pipelines.
+
+      - name: Networking and Systems
+        level: Research
+        icon: fa-solid fa-network-wired
+        keywords: "Cellular networking, IoT, network security, anomaly detection, performance analysis"
+        highlights:
+          - Cellular networking, IoT, network security, anomaly detection, and performance analysis.
+
+    Awards:
+      - title: Graduate Fellowship Award
+        authors:
+          - The George Washington University
+        awarder: The George Washington University
+        summary: Fellowship support for graduate study in Electrical Engineering.
+
+      - title: OIC Scholarship
+        authors:
+          - Islamic University of Technology
+        awarder: Islamic University of Technology
+        summary: Awarded following placement among the top candidates in the university admission examination.
+
+      - title: Higher Secondary Board Scholarship
+        authors:
+          - Dhaka Education Board
+        awarder: Dhaka Education Board
+        summary: Merit scholarship awarded for strong performance in the Higher Secondary Certificate examinations.
+
+    Experience:
+      - company: IUT Career & Business Society
+        position: Chief Operations Officer
+        start_date: 2019-01
+        end_date: 2021-05
+        highlights:
+          - Planned events, coordinated club operations, and developed sponsorship and communications materials.
+
+      - company: Esonance — Official Magazine
+        position: Editor
+        start_date: 2018-01
+        end_date: 2020-12
+        highlights:
+          - Edited, proofread, and organized magazine articles and introductory material.
+
+      - company: Project Green
+        position: Creative Coordinator
+        start_date: 2020-01
+        end_date: present
+        url: https://projectgreenbd.org/
+        highlights:
+          - Supported environmental outreach and public-facing communication.
 
     Languages:
-      - name: German
-        summary: "Native speaker"
-
+      - name: Bengali
+        summary: Native
+        highlights:
+          - Native proficiency.
       - name: English
-        summary: "Fluent"
+        summary: Fluent
+        highlights:
+          - Fluent proficiency.
+      - name: Hindi
+        summary: Professional working proficiency
+        highlights:
+          - Professional working proficiency.
 
     Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: Research and technical writing
+        icon: fa-solid fa-pen-nib
+        keywords: "Wireless AI, signal processing, connected systems, research communication"
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+          - Wireless AI, signal processing, connected systems, and research communication.
+      - name: Community and environmental activities
+        icon: fa-solid fa-seedling
+        keywords: "Student organizations, editing, environmental outreach"
+        highlights:
+          - Student organizations, editing, and environmental outreach.
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+design:
+  theme: classic
+  page_size: a4paper
+  disable_page_numbering: true
+  disable_last_updated_date: true
 
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+locale_catalog:
+  present: present
+  to: "–"
+
+rendercv_settings:
+  bold_keywords: []

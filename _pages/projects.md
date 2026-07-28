@@ -2,14 +2,15 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Selected research implementations in wireless AI, localization, signal processing, and connected systems.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [wireless-ai, connected-systems]
 horizontal: false
 ---
 
-<!-- pages/projects.md -->
+These selected projects connect research questions to reproducible implementations. Closely related repositories are grouped into one project story, and only public code is linked.
+
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->

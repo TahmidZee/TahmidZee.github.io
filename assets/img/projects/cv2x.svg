@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Connected vehicle communication network</title>
+  <desc id="desc">Two vehicles exchange wireless messages through roadside and edge infrastructure with a context-aware monitoring layer.</desc>
+  <rect width="960" height="540" fill="#071b1f"/>
+  <path d="M0 400h960" stroke="#31565c" stroke-width="6"/>
+  <path d="M70 465h170M300 465h170M530 465h170M760 465h140" stroke="#d9eee9" stroke-width="9" stroke-dasharray="55 28"/>
+  <g fill="#53d6c7">
+    <path d="M155 355h190l35 45H120z"/><circle cx="175" cy="409" r="24" fill="#0c2c33" stroke="#53d6c7" stroke-width="10"/><circle cx="325" cy="409" r="24" fill="#0c2c33" stroke="#53d6c7" stroke-width="10"/>
+    <path d="M615 355h190l35 45H580z"/><circle cx="635" cy="409" r="24" fill="#0c2c33" stroke="#53d6c7" stroke-width="10"/><circle cx="785" cy="409" r="24" fill="#0c2c33" stroke="#53d6c7" stroke-width="10"/>
+  </g>
+  <g fill="none" stroke="#f6b65b" stroke-width="8" stroke-linecap="round">
+    <path d="M360 325q120-110 240 0"/>
+    <path d="M395 340q85-70 170 0"/>
+  </g>
+  <g transform="translate(450 75)">
+    <rect width="60" height="130" rx="12" fill="#173a42" stroke="#a8e6dc" stroke-width="5"/>
+    <path d="M30 0V-35M5-25h50" stroke="#a8e6dc" stroke-width="6"/>
+  </g>
+  <g font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="480" y="245" fill="#f3faf8" font-size="34" font-weight="700">CONTEXT-AWARE V2X</text>
+    <text x="480" y="285" fill="#9cc8c3" font-size="22">reliability, resources, and functional security</text>
+  </g>
+</svg>

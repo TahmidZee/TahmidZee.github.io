@@ -6,9 +6,8 @@ on:
       - master
     paths:
       - "_data/cv.yml"
-      - "assets/rendercv/design.yaml"
-      - "assets/rendercv/locale.yaml"
-      - "assets/rendercv/settings.yaml"
+      - "requirements.txt"
+      - ".github/workflows/render-cv.yml"
   workflow_call:
   workflow_dispatch:
 permissions:
@@ -32,18 +31,14 @@ jobs:
             echo "No cv.yml file found!"
             exit 1
           fi
-          rendercv_dir=$(find assets -maxdepth 1 -type d -name "rendercv")
-          if [ -z "$rendercv_dir" ]; then
-            echo "No RenderCV config directory found!"
-            exit 1
-          fi
-          settings=$(find $rendercv_dir -maxdepth 1 -type f \( -name "settings.yaml" -o -name "settings.yml" \))
-          if [ -z "$settings" ]; then
-            echo "Missing RenderCV config file!"
-            exit 1
-          fi
-          rendercv render $cv_file --settings $settings
-          rm assets/rendercv/rendercv_output/*.typ
+          mkdir -p assets/rendercv/rendercv_output
+          rendercv render "$cv_file" \
+            --pdf-path "assets/rendercv/rendercv_output/Tahmid_Zaman_Tahi_CV.pdf" \
+            --latex-path "assets/rendercv/rendercv_output/Tahmid_Zaman_Tahi_CV.tex" \
+            --dont-generate-markdown \
+            --dont-generate-html \
+            --dont-generate-png
+          rm -f assets/rendercv/rendercv_output/*.tex
       - name: Upload rendercv_output as an artifact
         uses: actions/upload-artifact@v4
         with:

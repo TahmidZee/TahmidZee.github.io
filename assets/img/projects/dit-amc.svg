@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">DiT-AMC signal classification diagram</title>
+  <desc id="desc">Noisy in-phase and quadrature waveforms pass through transformer tokens toward modulation labels.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1"><stop stop-color="#17102f"/><stop offset="1" stop-color="#082c3c"/></linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M70 176c45-110 90 110 135 0s90 110 135 0" stroke="#ff7bbf" stroke-width="9"/>
+    <path d="M70 265c45-65 90 65 135 0s90 65 135 0" stroke="#6fe7dd" stroke-width="9" opacity=".9"/>
+  </g>
+  <g transform="translate(420 110)">
+    <rect width="320" height="270" rx="24" fill="#ffffff12" stroke="#b9a7ff" stroke-width="4"/>
+    <g fill="#b9a7ff">
+      <rect x="32" y="40" width="56" height="56" rx="10"/>
+      <rect x="102" y="40" width="56" height="56" rx="10" opacity=".8"/>
+      <rect x="172" y="40" width="56" height="56" rx="10" opacity=".6"/>
+      <rect x="242" y="40" width="46" height="56" rx="10" opacity=".45"/>
+    </g>
+    <g stroke="#6fe7dd" stroke-width="4">
+      <path d="M60 130v75M130 130v75M200 130v75M265 130v75"/>
+      <path d="M60 205h205"/>
+    </g>
+    <text x="160" y="245" fill="#f6f3ff" font-family="system-ui, sans-serif" font-size="24" text-anchor="middle">TRANSFORMER</text>
+  </g>
+  <g font-family="system-ui, sans-serif">
+    <text x="85" y="345" fill="#d8d0f4" font-size="22">I/Q windows</text>
+    <text x="480" y="458" fill="#ffffff" font-size="34" font-weight="700" text-anchor="middle">DIFFUSION-REGULARIZED AMC</text>
+    <text x="480" y="500" fill="#b9c9d8" font-size="22" text-anchor="middle">single-pass, SNR-aware classification</text>
+  </g>
+</svg>

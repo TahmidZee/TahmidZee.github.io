@@ -2,7 +2,7 @@
 layout: cv
 permalink: /cv/
 title: CV
-nav: true
+nav: false
 nav_order: 4
 cv_pdf: /assets/rendercv/rendercv_output/Tahmid_Zaman_Tahi_CV.pdf
 cv_format: rendercv

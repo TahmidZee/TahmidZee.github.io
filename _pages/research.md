@@ -1,6 +1,6 @@
 ---
 layout: page
-title: research
+title: Research
 permalink: /research/
 description: Research themes in wireless AI, localization, signal processing, and trustworthy connected systems.
 nav: true

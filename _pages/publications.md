@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: Publications
 description: Peer-reviewed publications, preprints, and manuscripts by Tahmid Zaman Tahi.
 nav: true
 nav_order: 2

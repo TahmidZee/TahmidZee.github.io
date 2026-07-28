@@ -1,9 +1,9 @@
 ---
 layout: default
 permalink: /writing/
-title: writing
+title: Writing
 nav: true
-nav_order: 5
+nav_order: 4
 pagination:
   enabled: true
   collection: posts

@@ -90,7 +90,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 1100px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -99,7 +99,7 @@ max_width: 930px
 # see https://schema.org/docs/faq.html for more information
 serve_og_meta: true
 serve_schema_org: true
-og_image: https://tahmidzee.github.io/assets/img/tahmid-zaman-tahi.png
+og_image: https://tahmidzee.github.io/assets/img/og-portfolio.jpg
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -518,7 +518,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "/assets/css/site-performance.css"
+      fonts: "/assets/css/portfolio.css"
   highlightjs:
     integrity:
       css:

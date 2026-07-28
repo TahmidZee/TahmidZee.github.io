@@ -22,6 +22,7 @@ cv:
         start_date: 2025
         end_date: present
         highlights:
+          - Graduate Research Assistant advised by Dr. Yanxiao Zhao.
           - Research focus on intelligent reflective surface-assisted wireless communications.
           - Interests include wireless localization, signal processing, machine learning, and connected systems.
 
@@ -91,30 +92,37 @@ cv:
       - name: Wireless Communications and Signal Processing
         level: Research
         icon: fa-solid fa-signal
-        keywords: "RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, V2X, modulation classification"
+        keywords: "RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, C-V2X, 5G NR-V2X, HARQ, modulation classification, link budgets and SNR"
         highlights:
-          - RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, V2X, and modulation classification.
+          - RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, C-V2X, 5G NR-V2X, HARQ, modulation classification, link budgets, and SNR analysis.
 
       - name: Machine Learning
         level: Research
         icon: fa-solid fa-brain
-        keywords: "PyTorch, CNNs, transformers, reinforcement learning, representation learning, hyperparameter optimization"
+        keywords: "PyTorch, TensorFlow, scikit-learn, CNNs, transformers, diffusion models, reinforcement learning, deep Q-learning, representation learning, hyperparameter optimization"
         highlights:
-          - PyTorch, CNNs, transformers, reinforcement learning, representation learning, and hyperparameter optimization.
+          - PyTorch, TensorFlow, scikit-learn, CNNs, transformers, diffusion models, reinforcement learning, deep Q-learning, representation learning, and hyperparameter optimization.
 
-      - name: Programming and Experimentation
+      - name: Scientific Computing and Experimentation
         level: Advanced
         icon: fa-solid fa-code
-        keywords: "Python, MATLAB, NumPy, Git, Linux, reproducible research pipelines"
+        keywords: "Python, MATLAB, Simulink, NumPy, pandas, Matplotlib, C, shell scripting, Git, reproducible research pipelines"
         highlights:
-          - Python, MATLAB, NumPy, Git, Linux, and reproducible research pipelines.
+          - Python, MATLAB, Simulink, NumPy, pandas, Matplotlib, C, shell scripting, Git, and reproducible research pipelines.
 
       - name: Networking and Systems
         level: Research
         icon: fa-solid fa-network-wired
-        keywords: "Cellular networking, IoT, network security, anomaly detection, performance analysis"
+        keywords: "Cellular networking and planning, IoT/NMS, network security, anomaly detection, performance analysis, Atoll, Cisco Packet Tracer, Linux, UAT"
         highlights:
-          - Cellular networking, IoT, network security, anomaly detection, and performance analysis.
+          - Cellular networking and planning, IoT/NMS, network security, anomaly detection, performance analysis, Atoll, Cisco Packet Tracer, Linux, and user acceptance testing.
+
+      - name: Research Engineering Tools
+        level: Working
+        icon: fa-solid fa-screwdriver-wrench
+        keywords: "GitHub, LaTeX, HTML/CSS, Node.js, PSpice, Proteus, PSIM, ARM Keil, JMP"
+        highlights:
+          - GitHub, LaTeX, HTML/CSS, Node.js, PSpice, Proteus, PSIM, ARM Keil, and JMP.
 
     Awards:
       - title: Graduate Fellowship Award
@@ -136,27 +144,30 @@ cv:
         summary: Merit scholarship awarded for strong performance in the Higher Secondary Certificate examinations.
 
     Experience:
-      - company: IUT Career & Business Society
-        position: Chief Operations Officer
-        start_date: 2019-01
-        end_date: 2021-05
-        highlights:
-          - Planned events, coordinated club operations, and developed sponsorship and communications materials.
-
-      - company: Esonance — Official Magazine
-        position: Editor
-        start_date: 2018-01
-        end_date: 2020-12
-        highlights:
-          - Edited, proofread, and organized magazine articles and introductory material.
-
-      - company: Project Green
-        position: Creative Coordinator
-        start_date: 2020-01
+      - company: Virginia Commonwealth University
+        position: Graduate Research Assistant
+        start_date: 2025-01
         end_date: present
-        url: https://projectgreenbd.org/
         highlights:
-          - Supported environmental outreach and public-facing communication.
+          - Conducting research on intelligent reflective surface-assisted wireless communications with Dr. Yanxiao Zhao.
+          - Developing learning-enabled signal-processing methods for wireless localization and communication systems.
+
+      - company: The George Washington University
+        position: Graduate Teaching Assistant
+        start_date: 2023-01
+        end_date: 2024-05
+        highlights:
+          - Led recitations and supported courses in circuits, signals and systems, digital signal processing, engineering analysis, and computer organization.
+          - Assessed coding and mathematical work and provided technical support to approximately 60 students per semester.
+
+      - company: ADN Telecom Limited
+        position: Engineer, Network Infrastructure
+        start_date: 2021-11
+        end_date: 2022-12
+        highlights:
+          - Developed link budgets, analyzed SNR, and performed network planning, surveys, troubleshooting, and technical documentation.
+          - Supported an IoT-based network-management deployment monitoring power devices across 41 universities.
+          - Conducted user acceptance testing and collaborated on network-infrastructure delivery.
 
     Languages:
       - name: Bengali

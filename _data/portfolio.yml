@@ -1,0 +1,156 @@
+research_themes:
+  - number: "01"
+    icon: fa-solid fa-location-crosshairs
+    title: Wireless sensing and localization
+    description: Hybrid model-based and learned methods for RIS-assisted and near-field localization.
+    tags:
+      - RIS / IRS
+      - Near field
+      - MUSIC / MVDR
+    url: /research/#learning-enabled-wireless-sensing-and-localization
+
+  - number: "02"
+    icon: fa-solid fa-wave-square
+    title: Learning for communications
+    description: Signal-aware neural systems that remain robust across channel conditions and changing SNR.
+    tags:
+      - Transformers
+      - Modulation
+      - Robust ML
+    url: /research/#signal-processing-and-machine-learning-for-communications
+
+  - number: "03"
+    icon: fa-solid fa-shield-halved
+    title: Trustworthy connected systems
+    description: Context-aware reliability, resource allocation, and security for V2X and edge-assisted systems.
+    tags:
+      - C-V2X
+      - Networking
+      - Security
+    url: /research/#trustworthy-connected-systems
+
+skills:
+  - icon: fa-solid fa-satellite-dish
+    title: Wireless & signal processing
+    featured:
+      - RIS / IRS
+      - Near-field localization
+      - MUSIC / MVDR
+      - AoA & range estimation
+      - C-V2X / 5G NR-V2X
+      - HARQ
+      - Modulation classification
+      - Link budgets & SNR
+
+  - icon: fa-solid fa-brain
+    title: Machine learning
+    featured:
+      - PyTorch
+      - TensorFlow
+      - scikit-learn
+      - Transformers & CNNs
+      - Diffusion models
+      - Reinforcement learning
+      - Representation learning
+      - Hyperparameter optimization
+
+  - icon: fa-solid fa-code
+    title: Scientific computing
+    featured:
+      - Python
+      - MATLAB / Simulink
+      - NumPy
+      - pandas
+      - Matplotlib
+      - C
+      - Shell scripting
+      - Reproducible experiments
+
+  - icon: fa-solid fa-network-wired
+    title: Networking & systems
+    featured:
+      - Cellular planning
+      - IoT / NMS
+      - Network performance
+      - Anomaly analysis
+      - Atoll
+      - Cisco Packet Tracer
+      - Linux
+      - UAT & troubleshooting
+
+additional_tools:
+  - Git / GitHub
+  - LaTeX
+  - HTML / CSS
+  - Node.js
+  - PSpice
+  - Proteus
+  - PSIM
+  - ARM Keil
+  - JMP
+
+featured_projects:
+  - eyebrow: Featured research
+    icon: fa-solid fa-location-dot
+    title: Hybrid RIS Localization
+    description: A learned covariance pipeline with K-free MVDR inference for multi-source angle and range estimation.
+    tags:
+      - PyTorch
+      - MVDR
+      - Near field
+    url: /projects/ris-localization/
+    accent: cyan
+
+  - eyebrow: Signal intelligence
+    icon: fa-solid fa-chart-line
+    title: DiT-AMC
+    description: Diffusion-regularized transformers for automatic modulation classification under changing SNR.
+    tags:
+      - Transformers
+      - Diffusion
+      - RadioML
+    url: /projects/dit-amc/
+    accent: violet
+
+  - eyebrow: Connected systems
+    icon: fa-solid fa-car-side
+    title: Reliable & Trustworthy V2X
+    description: Resource allocation, low-latency retransmission, and context-aware monitoring for connected vehicles.
+    tags:
+      - C-V2X
+      - HARQ
+      - Security
+    url: /projects/cv2x-systems/
+    accent: coral
+
+  - eyebrow: Earlier work
+    icon: fa-solid fa-route
+    title: Learning for Path Planning
+    description: Experiments connecting classical planning, deep Q-learning, and reinforcement learning for navigation.
+    tags:
+      - DQN
+      - RL
+      - Planning
+    url: /projects/learning-path-planning/
+    accent: lime
+
+timeline:
+  - date: 2025 — Now
+    role: PhD Researcher · Graduate Research Assistant
+    organization: Virginia Commonwealth University
+    description: Intelligent-surface-assisted wireless communications with Dr. Yanxiao Zhao.
+
+  - date: 2023 — 2024
+    role: M.S. Electrical Engineering · Graduate Teaching Assistant
+    organization: The George Washington University
+    description: Signals, systems, DSP, and engineering analysis instruction alongside graduate research.
+
+  - date: 2021 — 2022
+    role: Engineer, Network Infrastructure
+    organization: ADN Telecom Limited
+    description: Link budgets, network planning, IoT/NMS deployment, technical validation, and troubleshooting.
+
+  - date: 2017 — 2021
+    role: B.S. Electrical & Electronic Engineering
+    organization: Islamic University of Technology
+    description: C-V2X sidelink research and a foundation in communications, electronics, and signal processing.

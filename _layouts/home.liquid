@@ -248,7 +248,9 @@ layout: default
           {% endif %}
           <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%b %Y' }}</time>
           <p>
-            {% if item.title %}
+            {% if item.inline %}
+              {{ item.content | strip_html | truncatewords: 18 }}
+            {% elsif item.title %}
               {{ item.title }}
             {% else %}
               {{ item.content | strip_html | truncatewords: 18 }}

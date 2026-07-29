@@ -23,19 +23,20 @@ pagination:
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
 
-  <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
+  <div class="field-notes-hero">
+    <div class="header-bar">
+      <h1>{{ site.blog_name }}</h1>
+      <h2>{{ site.blog_description }}</h2>
+    </div>
+    <div class="field-notes-photo">
+      {%
+        include figure.liquid loading="eager" path="assets/img/field-notes-banner.jpg" class="field-notes-banner-image"
+        sizes="(min-width: 992px) 420px, (min-width: 576px) 420px, calc(100vw - 64px)"
+        alt="Tahmid standing at a coastal overlook with a rocky shoreline and waterfall behind him" width=1200 height=1500
+      %}
+    </div>
   </div>
   {% endif %}
-
-  <div class="field-notes-banner">
-    {%
-      include figure.liquid loading="eager" path="assets/img/field-notes-banner.jpg" class="field-notes-banner-image"
-      sizes="(min-width: 1140px) 1100px, calc(100vw - 40px)"
-      alt="Tahmid standing at a coastal overlook with a rocky shoreline and waterfall behind him" width=1800 height=720
-    %}
-  </div>
 
 {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
 

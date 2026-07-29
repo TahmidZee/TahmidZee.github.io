@@ -57,19 +57,13 @@ layout: default
       <div class="signal-node signal-node-one" aria-hidden="true"></div>
       <div class="signal-node signal-node-two" aria-hidden="true"></div>
       <div class="portrait-frame">
-        <span class="portrait-index" aria-hidden="true">TZT / 01</span>
         <figure>
           {%
             include figure.liquid loading="eager" path=profile_image_path class="portfolio-portrait" sizes="(min-width: 992px)
-            390px, (min-width: 576px) 360px, 86vw" alt="Portrait of Tahmid Zaman Tahi" width=501 height=499 cache_bust=true
+            390px, (min-width: 576px) 360px, 86vw" alt="Professional headshot of Tahmid Zaman Tahi" width=1000 height=1040
+            cache_bust=true
           %}
         </figure>
-        <div class="portrait-caption">
-          <span>
-            <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i>
-          </span>
-          <p><strong>Current focus</strong> Learning-enabled RIS localization</p>
-        </div>
       </div>
     </div>
   </section>
@@ -176,11 +170,10 @@ layout: default
       {% for skill in site.data.portfolio.core_expertise %}
         <article class="core-expertise-card">
           <div class="core-expertise-heading">
-            <div class="core-expertise-index">
-              <span>{{ skill.number }}</span>
-              <span class="skill-icon"><i class="{{ skill.icon }}" aria-hidden="true"></i></span>
+            <div class="core-expertise-title">
+              <span class="skill-icon" aria-hidden="true"><i class="{{ skill.icon }}"></i></span>
+              <h3>{{ skill.title }}</h3>
             </div>
-            <h3>{{ skill.title }}</h3>
             <p>{{ skill.summary }}</p>
           </div>
 

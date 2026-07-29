@@ -27,8 +27,7 @@ research_themes:
     url: /research/#trustworthy-connected-systems
 
 core_expertise:
-  - number: "01"
-    icon: fa-solid fa-tower-broadcast
+  - icon: fa-solid fa-tower-broadcast
     title: Wireless communications & physical layer
     summary: System-level and link-level reasoning across propagation, multi-antenna links, intelligent surfaces, and connected-vehicle communications.
     domains:
@@ -46,21 +45,21 @@ core_expertise:
           - AoA / AoD channel geometry
           - Beamforming & phase control
           - CSI and channel estimation
-      - title: Next-generation wireless systems
+      - title: RIS-assisted & connected wireless systems
         items:
           - Large-scale RIS / IRS
           - NOMA & successive interference cancellation
           - Pilot-overhead reduction
           - Energy efficiency & user fairness
-          - C-V2X / NR-V2X, HARQ & resource allocation
+          - C-V2X sidelink communication
+          - HARQ retransmission & throughput analysis
     evidence:
       - label: ICCCN 2026
         url: /publications/#alam2026deep
       - label: C-V2X research
         url: /research/#trustworthy-connected-systems
 
-  - number: "02"
-    icon: fa-solid fa-wave-square
+  - icon: fa-solid fa-wave-square
     title: Array signal processing & wireless sensing
     summary: Model-based and learned estimation methods for spatial inference, channel reconstruction, and robust signal intelligence.
     domains:

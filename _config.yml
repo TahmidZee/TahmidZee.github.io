@@ -122,9 +122,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Writing
-blog_description: Research notes, technical ideas, and life beyond the lab.
-permalink: /writing/:year/:title/
+blog_name: Notes
+blog_description: Research ideas, technical explainers, travel stories, and life beyond the lab.
+permalink: /notes/:year/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
@@ -314,9 +314,9 @@ jekyll-archives:
   posts:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
     permalinks:
-      year: "/writing/:year/"
-      tags: "/writing/:type/:name/"
-      categories: "/writing/:type/:name/"
+      year: "/notes/:year/"
+      tags: "/notes/:type/:name/"
+      categories: "/notes/:type/:name/"
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 

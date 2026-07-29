@@ -3,6 +3,10 @@ layout: post
 title: IRS localization paper published
 date: 2025-11-10 09:00:00-0500
 inline: false
+display_date: Nov 2025
+kind: Publication
+icon: fa-solid fa-book-open
+summary: Deep learning-assisted angle and distance estimation for IRS localization.
 related_posts: false
 ---
 

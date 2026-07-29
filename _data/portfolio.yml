@@ -2,21 +2,21 @@ research_themes:
   - number: "01"
     icon: fa-solid fa-location-crosshairs
     title: Wireless sensing and localization
-    description: Hybrid model-based and learned methods for RIS-assisted and near-field localization.
+    description: Hybrid model-based and learned methods for multi-antenna, RIS-assisted, and near-field systems.
     tags:
-      - RIS / IRS
-      - Near field
+      - MIMO / RIS
+      - CSI & channels
       - MUSIC / MVDR
     url: /research/#learning-enabled-wireless-sensing-and-localization
 
   - number: "02"
     icon: fa-solid fa-wave-square
     title: Learning for communications
-    description: Signal-aware neural systems that remain robust across channel conditions and changing SNR.
+    description: Signal-aware neural systems for channel reconstruction, modulation recognition, and low-SNR robustness.
     tags:
-      - Transformers
-      - Modulation
-      - Robust ML
+      - I/Q & AMR
+      - Conditional ML
+      - Low SNR
     url: /research/#signal-processing-and-machine-learning-for-communications
 
   - number: "03"
@@ -29,50 +29,112 @@ research_themes:
       - Security
     url: /research/#trustworthy-connected-systems
 
-skills:
-  - icon: fa-solid fa-satellite-dish
-    title: Wireless & signal processing
-    featured:
-      - RIS / IRS
-      - Near-field localization
-      - MUSIC / MVDR
-      - AoA & range estimation
-      - C-V2X / 5G NR-V2X
-      - HARQ
-      - Modulation classification
-      - Link budgets & SNR
+core_expertise:
+  - number: "01"
+    icon: fa-solid fa-tower-broadcast
+    title: Wireless communications & physical layer
+    summary: System-level and link-level reasoning across propagation, multi-antenna links, intelligent surfaces, and connected-vehicle communications.
+    domains:
+      - title: Physical-layer foundations
+        items:
+          - Complex baseband systems
+          - Digital modulation & detection
+          - Link budgets, path loss & fading
+          - SNR, SINR & BER analysis
+          - Throughput & spectral efficiency
+      - title: MIMO, antennas & channel acquisition
+        items:
+          - Multi-antenna / MIMO systems
+          - Antenna arrays & steering vectors
+          - AoA / AoD channel geometry
+          - Beamforming & phase control
+          - CSI and channel estimation
+      - title: Next-generation wireless systems
+        items:
+          - Large-scale RIS / IRS
+          - NOMA & successive interference cancellation
+          - Pilot-overhead reduction
+          - Energy efficiency & user fairness
+          - C-V2X / NR-V2X, HARQ & resource allocation
+    evidence:
+      - label: ICCCN 2026
+        url: /publications/#alam2026deep
+      - label: C-V2X research
+        url: /research/#trustworthy-connected-systems
 
+  - number: "02"
+    icon: fa-solid fa-wave-square
+    title: Array signal processing & wireless sensing
+    summary: Model-based and learned estimation methods for spatial inference, channel reconstruction, and robust signal intelligence.
+    domains:
+      - title: Spatial estimation & localization
+        items:
+          - Sample and learned covariance
+          - MUSIC and MVDR / Capon
+          - Spatial spectra & peak detection
+          - AoA, range & multi-source localization
+          - Near-field spherical-wave modeling
+      - title: Channels, propagation & sensing
+        items:
+          - Geometric multipath channels
+          - Block fading & mobility models
+          - Cascaded RIS channel modeling
+          - Partial / full CSI reconstruction
+          - Channel-quality conditioning
+      - title: Signal intelligence
+        items:
+          - Raw complex I/Q processing
+          - Automatic modulation recognition
+          - Low-SNR robustness
+          - Spatiotemporal signal features
+          - Ablations & statistical testing
+    evidence:
+      - label: RIS localization
+        url: /projects/ris-localization/
+      - label: MILCOM manuscript
+        url: /publications/#tahi2026brfilm
+
+supporting_skills:
   - icon: fa-solid fa-brain
-    title: Machine learning
+    title: Learning for RF & communications
+    summary: Hybrid model-based and data-driven methods designed around signal structure and operating conditions.
     featured:
       - PyTorch
       - TensorFlow
       - scikit-learn
-      - Transformers & CNNs
+      - CNN / RNN / LSTM
+      - Transformers
+      - FiLM & conditional networks
       - Diffusion models
-      - Reinforcement learning
-      - Representation learning
+      - Reinforcement learning / DQN
+      - Multi-objective learning
       - Hyperparameter optimization
 
   - icon: fa-solid fa-code
-    title: Scientific computing
+    title: Scientific computing & simulation
+    summary: Reproducible numerical experiments spanning simulation, training, analysis, and technical communication.
     featured:
       - Python
       - MATLAB / Simulink
-      - NumPy
+      - NumPy / SciPy
       - pandas
       - Matplotlib
       - C
       - Shell scripting
-      - Reproducible experiments
+      - Git / GitHub
+      - LaTeX
+      - GPU experiments
 
   - icon: fa-solid fa-network-wired
-    title: Networking & systems
+    title: Networking & connected systems
+    summary: Communication-aware analysis from cellular planning and IoT operations to reliable, secure connected vehicles.
     featured:
       - Cellular planning
+      - 5G NR-V2X / C-V2X
+      - Latency & reliability
+      - Connected-vehicle security
+      - Context-aware anomaly analysis
       - IoT / NMS
-      - Network performance
-      - Anomaly analysis
       - Atoll
       - Cisco Packet Tracer
       - Linux

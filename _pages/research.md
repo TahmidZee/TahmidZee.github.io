@@ -13,9 +13,9 @@ My research combines structure from wireless communications and signal processin
 
 ## Learning-enabled wireless sensing and localization
 
-Future wireless infrastructure will increasingly act as both a communication medium and a sensor. Reconfigurable intelligent surfaces, large arrays, and near-field propagation create new localization opportunities, but they also introduce high-dimensional estimation problems.
+Future wireless infrastructure will increasingly act as both a communication medium and a sensor. Reconfigurable intelligent surfaces, multi-antenna links, large arrays, and near-field propagation create new communication and localization opportunities, but they also introduce high-dimensional channel-estimation problems.
 
-I explore hybrid pipelines that combine neural networks with model-based estimators such as MUSIC and MVDR. The goal is not to replace signal processing blindly, but to learn the components that are difficult to model while preserving interpretable structure where it remains useful.
+I explore hybrid pipelines that combine neural networks with physical-layer and array-processing models. This includes partial-CSI reconstruction and RIS phase control for NOMA systems, alongside model-based estimators such as MUSIC and MVDR for spatial localization. The goal is not to replace signal processing blindly, but to learn the components that are difficult to model while preserving interpretable structure where it remains useful.
 
 **Current questions**
 
@@ -27,12 +27,14 @@ I explore hybrid pipelines that combine neural networks with model-based estimat
 
 Wireless observations are noisy, structured, and strongly dependent on channel conditions. My work studies architectures that treat those properties as design information rather than generic nuisance variation.
 
-Current experiments include diffusion-regularized transformer models for automatic modulation classification, covariance prediction for spectral localization, multi-window evidence aggregation, and learning-assisted refinement of angle and range estimates.
+Current experiments include channel-quality-conditioned automatic modulation recognition from raw I/Q samples, diffusion-regularized transformer models, covariance prediction for spectral localization, multi-window evidence aggregation, and learning-assisted refinement of angle and range estimates.
 
 **Methods**
 
+- MIMO and antenna-array modeling, geometric channels, CSI estimation, RIS phase control, NOMA/SIC, and link-level evaluation
+- Complex baseband and I/Q processing, automatic modulation recognition, and low-SNR analysis
 - PyTorch-based model development and GPU training
-- CNNs, transformers, learned representations, and reinforcement learning
+- CNN/RNN/LSTM models, transformers, conditional networks, learned representations, and reinforcement learning
 - MUSIC/MVDR spectral estimation and hybrid covariance modeling
 - Simulation, ablation studies, hyperparameter optimization, and SNR-stratified evaluation
 

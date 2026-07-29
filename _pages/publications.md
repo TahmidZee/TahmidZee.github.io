@@ -17,6 +17,8 @@ This page is maintained from a hand-checked BibTeX bibliography so that new work
 
 {% bibliography --query @*[status=published] %}
 
+{% bibliography --query @*[status=accepted] %}
+
 </div>
 
 ## Preprints and technical reports
@@ -29,4 +31,10 @@ This page is maintained from a hand-checked BibTeX bibliography so that new work
 
 ## Manuscripts under review
 
-Manuscript details will be added once they can be shared publicly. Work listed in this section will be labeled **under review** and will never be presented as accepted.
+Work in this section is labeled **under review** and is not presented as accepted. Manuscript PDFs remain private unless a public preprint is approved.
+
+<div class="publications">
+
+{% bibliography --query @*[status=underreview] %}
+
+</div>

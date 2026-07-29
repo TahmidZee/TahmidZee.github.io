@@ -4,7 +4,7 @@ cv:
   email: tahi.tahmid@gmail.com
   location: Virginia, USA
   image: ""
-  summary: PhD student working on learning-enabled wireless systems, signal processing, localization, and trustworthy connected vehicles.
+  summary: PhD researcher working on wireless physical-layer systems, MIMO and intelligent surfaces, array signal processing, localization, and learning-enabled communications.
 
   social_networks:
     - network: GitHub
@@ -60,6 +60,30 @@ cv:
         releaseDate: 2026
         url: https://epapers2.org/itec2026/ESR/session_view.php?print=1&session_id=31
 
+      - title: Deep Learning-Enabled Energy-Efficient Joint CSI Estimation and Phase Shift Prediction in Large-Scale RIS-Assisted NOMA Systems
+        authors:
+          - Syed Samiul Alam
+          - Yanxiao Zhao
+          - Haolin Tang
+          - Tahmid Tahi
+          - Wei Wang
+          - Nibir K. Dhar
+          - Min Song
+        publisher: The 35th International Conference on Computer Communications and Networks (ICCCN 2026) - accepted for presentation
+        releaseDate: 2026-07
+        url: https://www.icccn.org/
+
+      - title: "BR-FiLM: Bounded Residual Channel-Quality Conditioning for Automatic Modulation Recognition"
+        authors:
+          - Tahmid Zaman Tahi
+          - Syed Samiul Alam
+          - Haolin Tang
+          - Yanxiao Zhao
+          - Jun Huang
+          - Min Song
+        publisher: Manuscript under review at the 2026 IEEE Military Communications Conference (MILCOM)
+        releaseDate: 2026
+
       - title: Enhancing IRS Localization via Deep Learning-Based AOA and Distance Estimation
         authors:
           - Nikhila Kotlapara Surendran
@@ -89,33 +113,42 @@ cv:
         releaseDate: 2021
 
     Skills:
-      - name: Wireless Communications and Signal Processing
+      - name: Wireless Communications and Physical Layer
         level: Research
         icon: fa-solid fa-signal
-        keywords: "RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, C-V2X, 5G NR-V2X, HARQ, modulation classification, link budgets and SNR"
+        keywords: "MIMO, antenna arrays, beamforming, CSI estimation, RIS/IRS, NOMA and SIC, modulation and detection, link budgets, path loss and fading, SNR, SINR, BER, throughput, spectral and energy efficiency, C-V2X, 5G NR-V2X, HARQ"
         highlights:
-          - RIS/IRS, near-field localization, MUSIC, MVDR, AoA and range estimation, C-V2X, 5G NR-V2X, HARQ, modulation classification, link budgets, and SNR analysis.
+          - Multi-antenna and MIMO systems, antenna arrays and steering vectors, beamforming and phase control, CSI and channel estimation, large-scale RIS/IRS, NOMA and successive interference cancellation.
+          - Digital modulation and detection, link budgets, path loss and fading, SNR/SINR/BER analysis, throughput, spectral and energy efficiency, C-V2X/NR-V2X, HARQ, and resource allocation.
 
-      - name: Machine Learning
+      - name: Array Signal Processing and Wireless Sensing
+        level: Research
+        icon: fa-solid fa-wave-square
+        keywords: "complex baseband and I/Q processing, covariance estimation, MUSIC, MVDR/Capon, spatial spectra, AoA and range estimation, near-field localization, geometric multipath channels, partial CSI reconstruction, automatic modulation recognition"
+        highlights:
+          - Complex baseband and I/Q processing, sample and learned covariance, MUSIC, MVDR/Capon, spatial spectra, AoA/range estimation, near-field and multi-source localization.
+          - Geometric multipath and cascaded RIS channels, block fading and mobility models, partial/full CSI reconstruction, automatic modulation recognition, and low-SNR robustness.
+
+      - name: Machine Learning for Communications
         level: Research
         icon: fa-solid fa-brain
-        keywords: "PyTorch, TensorFlow, scikit-learn, CNNs, transformers, diffusion models, reinforcement learning, deep Q-learning, representation learning, hyperparameter optimization"
+        keywords: "PyTorch, TensorFlow, scikit-learn, CNNs, RNNs, LSTMs, transformers, FiLM and conditional networks, diffusion models, reinforcement learning, deep Q-learning, multi-objective learning, representation learning, hyperparameter optimization"
         highlights:
-          - PyTorch, TensorFlow, scikit-learn, CNNs, transformers, diffusion models, reinforcement learning, deep Q-learning, representation learning, and hyperparameter optimization.
+          - PyTorch, TensorFlow, scikit-learn, CNN/RNN/LSTM models, transformers, FiLM and conditional networks, diffusion models, reinforcement learning, deep Q-learning, multi-objective learning, representation learning, and hyperparameter optimization.
 
       - name: Scientific Computing and Experimentation
         level: Advanced
         icon: fa-solid fa-code
-        keywords: "Python, MATLAB, Simulink, NumPy, pandas, Matplotlib, C, shell scripting, Git, reproducible research pipelines"
+        keywords: "Python, MATLAB, Simulink, NumPy, SciPy, pandas, Matplotlib, C, shell scripting, Git, LaTeX, GPU experiments, reproducible research pipelines"
         highlights:
-          - Python, MATLAB, Simulink, NumPy, pandas, Matplotlib, C, shell scripting, Git, and reproducible research pipelines.
+          - Python, MATLAB, Simulink, NumPy, SciPy, pandas, Matplotlib, C, shell scripting, Git, LaTeX, GPU experiments, and reproducible research pipelines.
 
       - name: Networking and Systems
         level: Research
         icon: fa-solid fa-network-wired
-        keywords: "Cellular networking and planning, IoT/NMS, network security, anomaly detection, performance analysis, Atoll, Cisco Packet Tracer, Linux, UAT"
+        keywords: "Cellular networking and planning, 5G NR-V2X and C-V2X, latency and reliability, resource allocation, IoT/NMS, connected-vehicle security, anomaly detection, performance analysis, Atoll, Cisco Packet Tracer, Linux, UAT"
         highlights:
-          - Cellular networking and planning, IoT/NMS, network security, anomaly detection, performance analysis, Atoll, Cisco Packet Tracer, Linux, and user acceptance testing.
+          - Cellular networking and planning, 5G NR-V2X/C-V2X, latency and reliability, resource allocation, IoT/NMS, connected-vehicle security, context-aware anomaly analysis, Atoll, Cisco Packet Tracer, Linux, and user acceptance testing.
 
       - name: Research Engineering Tools
         level: Working

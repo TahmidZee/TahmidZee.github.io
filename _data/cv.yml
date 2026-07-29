@@ -48,7 +48,7 @@ cv:
           - Undergraduate thesis on low-latency HARQ retransmission for C-V2X sidelink communication.
           - OIC Scholarship recipient.
 
-    Publications:
+    Selected Publications and Manuscripts:
       - title: Context-Aware Functional Security for V2X-Enabled Connected Vehicles
         authors:
           - Tahmid Zaman Tahi
@@ -60,7 +60,7 @@ cv:
         releaseDate: 2026
         url: https://epapers2.org/itec2026/ESR/session_view.php?print=1&session_id=31
 
-      - title: Deep Learning-Enabled Energy-Efficient Joint CSI Estimation and Phase Shift Prediction in Large-Scale RIS-Assisted NOMA Systems
+      - title: Deep Learning-Enabled Energy-Efficient Joint CSI Estimation and Phase Shift Prediction in Large-Scale RIS-Assisted NOMA Systems (Accepted at ICCCN 2026)
         authors:
           - Syed Samiul Alam
           - Yanxiao Zhao
@@ -73,7 +73,7 @@ cv:
         releaseDate: 2026-07
         url: https://www.icccn.org/
 
-      - title: "BR-FiLM: Bounded Residual Channel-Quality Conditioning for Automatic Modulation Recognition"
+      - title: "BR-FiLM: Bounded Residual Channel-Quality Conditioning for Automatic Modulation Recognition (Manuscript under review at MILCOM 2026)"
         authors:
           - Tahmid Zaman Tahi
           - Syed Samiul Alam
@@ -201,32 +201,6 @@ cv:
           - Developed link budgets, analyzed SNR, and performed network planning, surveys, troubleshooting, and technical documentation.
           - Supported an IoT-based network-management deployment monitoring power devices across 41 universities.
           - Conducted user acceptance testing and collaborated on network-infrastructure delivery.
-
-    Languages:
-      - name: Bengali
-        summary: Native
-        highlights:
-          - Native proficiency.
-      - name: English
-        summary: Fluent
-        highlights:
-          - Fluent proficiency.
-      - name: Hindi
-        summary: Professional working proficiency
-        highlights:
-          - Professional working proficiency.
-
-    Interests:
-      - name: Research and technical writing
-        icon: fa-solid fa-pen-nib
-        keywords: "Wireless AI, signal processing, connected systems, research communication"
-        highlights:
-          - Wireless AI, signal processing, connected systems, and research communication.
-      - name: Community and environmental activities
-        icon: fa-solid fa-seedling
-        keywords: "Student organizations, editing, environmental outreach"
-        highlights:
-          - Student organizations, editing, and environmental outreach.
 
 design:
   theme: classic

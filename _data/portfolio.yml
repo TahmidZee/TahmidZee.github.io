@@ -1,6 +1,5 @@
 research_themes:
-  - number: "01"
-    icon: fa-solid fa-location-crosshairs
+  - icon: fa-solid fa-location-crosshairs
     title: Wireless sensing and localization
     description: Hybrid model-based and learned methods for multi-antenna, RIS-assisted, and near-field systems.
     tags:
@@ -9,8 +8,7 @@ research_themes:
       - MUSIC / MVDR
     url: /research/#learning-enabled-wireless-sensing-and-localization
 
-  - number: "02"
-    icon: fa-solid fa-wave-square
+  - icon: fa-solid fa-wave-square
     title: Learning for communications
     description: Signal-aware neural systems for channel reconstruction, modulation recognition, and low-SNR robustness.
     tags:
@@ -19,8 +17,7 @@ research_themes:
       - Low SNR
     url: /research/#signal-processing-and-machine-learning-for-communications
 
-  - number: "03"
-    icon: fa-solid fa-shield-halved
+  - icon: fa-solid fa-shield-halved
     title: Trustworthy connected systems
     description: Context-aware reliability, resource allocation, and security for V2X and edge-assisted systems.
     tags:
@@ -127,8 +124,10 @@ supporting_skills:
 
   - icon: fa-solid fa-network-wired
     title: Networking & connected systems
-    summary: Communication-aware analysis from cellular planning and IoT operations to reliable, secure connected vehicles.
+    summary: Communication-aware engineering from embedded sensing and cloud IoT to cellular planning and secure connected vehicles.
     featured:
+      - Arduino / embedded sensing
+      - ThingSpeak / cloud IoT
       - Cellular planning
       - 5G NR-V2X / C-V2X
       - Latency & reliability
@@ -185,6 +184,17 @@ featured_projects:
     url: /projects/cv2x-systems/
     accent: coral
 
+  - eyebrow: IoT & cloud control
+    icon: fa-solid fa-house-signal
+    title: Smart Home HVAC Control
+    description: An Arduino–ThingSpeak prototype that senses temperature, humidity, and light and generates cloud-based HVAC and blind-control states.
+    tags:
+      - Arduino MKR
+      - ThingSpeak
+      - MATLAB
+    url: /projects/iot-hvac/
+    accent: lime
+
   - eyebrow: Earlier work
     icon: fa-solid fa-route
     title: Learning for Path Planning
@@ -194,7 +204,7 @@ featured_projects:
       - RL
       - Planning
     url: /projects/learning-path-planning/
-    accent: lime
+    accent: violet
 
 timeline:
   - date: 2025 — Now

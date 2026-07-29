@@ -83,11 +83,8 @@ layout: default
   </ul>
 
   <section class="portfolio-section research-section" aria-labelledby="research-heading">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">What I investigate</p>
-        <h2 id="research-heading">Research at the intersection of <span>physics and intelligence.</span></h2>
-      </div>
+    <div class="section-heading section-heading-direct">
+      <h2 id="research-heading">Research</h2>
       <a class="section-link" href="{{ '/research/' | relative_url }}">
         Research overview
         <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -97,11 +94,10 @@ layout: default
     <div class="research-grid">
       {% for theme in site.data.portfolio.research_themes %}
         <a class="research-card" href="{{ theme.url | relative_url }}">
-          <div class="research-card-top">
-            <span class="research-number">{{ theme.number }}</span>
+          <div class="research-card-heading">
             <span class="icon-disc"><i class="{{ theme.icon }}" aria-hidden="true"></i></span>
+            <h3>{{ theme.title }}</h3>
           </div>
-          <h3>{{ theme.title }}</h3>
           <p>{{ theme.description }}</p>
           <div class="tag-row" role="list" aria-label="Methods">
             {% for tag in theme.tags %}
@@ -172,15 +168,8 @@ layout: default
     </div>
   </section>
   <section class="portfolio-section skills-section" aria-labelledby="skills-heading">
-    <div class="skills-intro">
-      <div class="skills-intro-heading">
-        <p class="section-kicker">Technical depth</p>
-        <h2 id="skills-heading">Wireless expertise, <span>from waveforms to systems.</span></h2>
-      </div>
-      <p>
-        My core work is grounded in wireless physical-layer modeling and array signal processing, supported by machine learning, simulation, and
-        connected-system experience.
-      </p>
+    <div class="skills-intro skills-intro-direct">
+      <h2 id="skills-heading">Technical Expertise</h2>
     </div>
 
     <div class="core-expertise-grid">
@@ -249,11 +238,8 @@ layout: default
   </section>
 
   <section class="portfolio-section work-section" aria-labelledby="work-heading">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">Selected work</p>
-        <h2 id="work-heading">Research ideas, built into <span>working systems.</span></h2>
-      </div>
+    <div class="section-heading section-heading-direct">
+      <h2 id="work-heading">Selected Projects</h2>
       <a class="section-link" href="{{ '/projects/' | relative_url }}">
         View all projects
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -261,7 +247,7 @@ layout: default
     </div>
 
     <div class="project-showcase">
-      {% for project in site.data.portfolio.featured_projects %}
+      {% for project in site.data.portfolio.featured_projects limit: 4 %}
         <a class="showcase-card showcase-{{ project.accent }}" href="{{ project.url | relative_url }}">
           <div class="project-visual" aria-hidden="true">
             <span class="project-grid-lines"></span>
@@ -286,11 +272,8 @@ layout: default
   </section>
 
   <section class="portfolio-section publication-section" aria-labelledby="publications-heading">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">Selected publications & manuscripts</p>
-        <h2 id="publications-heading">Research in progress <span>and in print.</span></h2>
-      </div>
+    <div class="section-heading section-heading-direct">
+      <h2 id="publications-heading">Selected Publications</h2>
       <a class="section-link" href="{{ '/publications/' | relative_url }}">
         Full publication record
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -301,11 +284,8 @@ layout: default
 
   <section class="portfolio-section trajectory-section" aria-labelledby="trajectory-heading">
     <div class="trajectory-main">
-      <div class="section-heading compact-heading">
-        <div>
-          <p class="section-kicker">Trajectory</p>
-          <h2 id="trajectory-heading">Research, engineering, <span>and teaching.</span></h2>
-        </div>
+      <div class="section-heading section-heading-direct compact-heading">
+        <h2 id="trajectory-heading">Experience & Education</h2>
       </div>
 
       <div class="timeline">
@@ -330,13 +310,10 @@ layout: default
   </section>
 
   <section class="portfolio-section writing-section" aria-labelledby="notes-heading">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">From the notebook</p>
-        <h2 id="notes-heading">Research notes, journeys, <span>and life beyond the lab.</span></h2>
-      </div>
+    <div class="section-heading section-heading-direct">
+      <h2 id="notes-heading">Field Notes</h2>
       <a class="section-link" href="{{ '/notes/' | relative_url }}">
-        Explore all notes
+        Explore Field Notes
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </a>
     </div>

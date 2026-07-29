@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /notes/
-title: Notes
+title: Field Notes
 nav: true
 nav_order: 4
 pagination:
@@ -16,7 +16,7 @@ pagination:
     after: 3 # The number of links after the current page
 ---
 
-<div class="post">
+<div class="post field-notes-page">
 
 {% assign blog_name_size = site.blog_name | size %}
 {% assign blog_description_size = site.blog_description | size %}
@@ -28,6 +28,14 @@ pagination:
     <h2>{{ site.blog_description }}</h2>
   </div>
   {% endif %}
+
+  <div class="field-notes-banner">
+    {%
+      include figure.liquid loading="eager" path="assets/img/field-notes-banner.jpg" class="field-notes-banner-image"
+      sizes="(min-width: 1140px) 1100px, calc(100vw - 40px)"
+      alt="Tahmid standing at a coastal overlook with a rocky shoreline and waterfall behind him" width=1800 height=720
+    %}
+  </div>
 
 {% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
 

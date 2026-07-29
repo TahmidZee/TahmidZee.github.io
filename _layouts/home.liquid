@@ -74,16 +74,45 @@ layout: default
     </div>
   </section>
 
-  <div class="focus-rail" aria-label="Research focus">
-    <span class="focus-label">Research focus</span>
-    <span>Physical-layer wireless</span>
-    <i class="fa-solid fa-circle" aria-hidden="true"></i>
-    <span>MIMO & RIS</span>
-    <i class="fa-solid fa-circle" aria-hidden="true"></i>
-    <span>Array sensing & localization</span>
-    <i class="fa-solid fa-circle" aria-hidden="true"></i>
-    <span>Trustworthy V2X</span>
-  </div>
+  <ul class="focus-rail" aria-label="Research focus">
+    <li class="focus-label">Research focus</li>
+    <li>Physical-layer wireless</li>
+    <li>MIMO & RIS</li>
+    <li>Array sensing & localization</li>
+    <li>Trustworthy V2X</li>
+  </ul>
+
+  <section class="portfolio-section research-section" aria-labelledby="research-heading">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">What I investigate</p>
+        <h2 id="research-heading">Research at the intersection of <span>physics and intelligence.</span></h2>
+      </div>
+      <a class="section-link" href="{{ '/research/' | relative_url }}">
+        Research overview
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="research-grid">
+      {% for theme in site.data.portfolio.research_themes %}
+        <a class="research-card" href="{{ theme.url | relative_url }}">
+          <div class="research-card-top">
+            <span class="research-number">{{ theme.number }}</span>
+            <span class="icon-disc"><i class="{{ theme.icon }}" aria-hidden="true"></i></span>
+          </div>
+          <h3>{{ theme.title }}</h3>
+          <p>{{ theme.description }}</p>
+          <div class="tag-row" role="list" aria-label="Methods">
+            {% for tag in theme.tags %}
+              <span role="listitem">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <i class="card-arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
 
   {% assign homepage_news_items = site.news | where_exp: 'item', 'item.homepage != false' | sort: 'date' | reverse %}
   <section class="portfolio-section updates-section" aria-labelledby="updates-heading">
@@ -111,7 +140,9 @@ layout: default
             <i class="{{ item.icon | default: 'fa-solid fa-bolt' }}" aria-hidden="true"></i>
             {{ item.kind | default: 'Update' }}
           </span>
-          <time datetime="{{ item.date | date_to_xmlschema }}">
+          <time
+            datetime="{% if item.display_date_iso %}{{ item.display_date_iso }}{% else %}{{ item.date | date_to_xmlschema }}{% endif %}"
+          >
             {% if item.display_date %}
               {{ item.display_date }}
             {% else %}
@@ -140,43 +171,12 @@ layout: default
       {% endfor %}
     </div>
   </section>
-
-  <section class="portfolio-section research-section" aria-labelledby="research-heading">
-    <div class="section-heading">
-      <div>
-        <p class="section-kicker">What I investigate</p>
-        <h2 id="research-heading">Research at the intersection of <span>physics and intelligence.</span></h2>
-      </div>
-      <a class="section-link" href="{{ '/research/' | relative_url }}">
-        Research overview
-        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-      </a>
-    </div>
-
-    <div class="research-grid">
-      {% for theme in site.data.portfolio.research_themes %}
-        <a class="research-card" href="{{ theme.url | relative_url }}">
-          <div class="research-card-top">
-            <span class="research-number">{{ theme.number }}</span>
-            <span class="icon-disc"><i class="{{ theme.icon }}" aria-hidden="true"></i></span>
-          </div>
-          <h3>{{ theme.title }}</h3>
-          <p>{{ theme.description }}</p>
-          <div class="tag-row" aria-label="Methods">
-            {% for tag in theme.tags %}
-              <span>{{ tag }}</span>
-            {% endfor %}
-          </div>
-          <i class="card-arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
-
   <section class="portfolio-section skills-section" aria-labelledby="skills-heading">
     <div class="skills-intro">
-      <p class="section-kicker">Technical depth</p>
-      <h2 id="skills-heading">Wireless expertise, <span>from waveforms to systems.</span></h2>
+      <div class="skills-intro-heading">
+        <p class="section-kicker">Technical depth</p>
+        <h2 id="skills-heading">Wireless expertise, <span>from waveforms to systems.</span></h2>
+      </div>
       <p>
         My core work is grounded in wireless physical-layer modeling and array signal processing, supported by machine learning, simulation, and
         connected-system experience.
@@ -228,9 +228,9 @@ layout: default
               <p>{{ skill.summary }}</p>
             </div>
           </div>
-          <div class="skill-pills">
+          <div class="skill-pills" role="list" aria-label="{{ skill.title }} tools and methods">
             {% for item in skill.featured %}
-              <span>{{ item }}</span>
+              <span role="listitem">{{ item }}</span>
             {% endfor %}
           </div>
         </article>
@@ -273,9 +273,9 @@ layout: default
             <p class="project-eyebrow">{{ project.eyebrow }}</p>
             <h3>{{ project.title }}</h3>
             <p>{{ project.description }}</p>
-            <div class="tag-row">
+            <div class="tag-row" role="list" aria-label="Project methods">
               {% for tag in project.tags %}
-                <span>{{ tag }}</span>
+                <span role="listitem">{{ tag }}</span>
               {% endfor %}
             </div>
           </div>
@@ -311,7 +311,7 @@ layout: default
       <div class="timeline">
         {% for item in site.data.portfolio.timeline %}
           <article class="timeline-item">
-            <time>{{ item.date }}</time>
+            <span class="timeline-date">{{ item.date }}</span>
             <div class="timeline-marker" aria-hidden="true"></div>
             <div>
               <h3>{{ item.role }}</h3>

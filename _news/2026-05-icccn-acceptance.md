@@ -3,6 +3,7 @@ layout: post
 title: RIS-NOMA paper accepted at ICCCN 2026
 date: 2026-05-01 09:00:00-0400
 display_date: May 2026
+display_date_iso: 2026-05
 kind: Acceptance
 icon: fa-solid fa-circle-check
 summary: Joint CSI reconstruction and RIS phase prediction from partial channel measurements.

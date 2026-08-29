@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T20:20:08.070Z",
+  "generatedAt": "2026-08-29T20:20:21.957Z",
   "source": "github-collector",
   "competition": "GRTA 2026 • League 21",
   "liveMatches": [
@@ -30,8 +30,8 @@
       "teamA": "Southern Caps",
       "teamB": "Knights",
       "scoreA": "86/2 (6.0 ov)",
-      "scoreB": "47/3 (4.0 ov)",
-      "result": "Southern Caps: 86/2 (6/6 ov)   <br/> Knights: 47/3 (4/6 ov)",
+      "scoreB": "54/4 (5.0 ov)",
+      "result": "Southern Caps: 86/2 (6/6 ov)   <br/> Knights: 54/4 (5/6 ov)",
       "date": "08/29/2026",
       "status": "live",
       "url": "https://cricclubs.com/GRTA1/viewScorecard.do?clubId=1004528&matchId=1196",

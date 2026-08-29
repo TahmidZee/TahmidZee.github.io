@@ -1,9 +1,12 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
+import { constants, publicEncrypt } from "node:crypto";
 
-const READER = "https://r.jina.ai/https://prod-lm.cricclubs.com/GRTA1";
 const SCORECARDS = "https://cricclubs.com/GRTA1/listMatches.do?league=21&clubId=1004528";
 const output = resolve(process.argv[2] || "assets/data/grta-standings.json");
+const CORE = "https://core-prod-origin.cricclubs.com/core";
+const APP_VERSION = "4.0.341";
+const PUBLIC_KEY_BODY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNokj65NYc9LdYZshBi6I1BUVu8NdhcafSkzSugFVwUydw7t2DPaZcewxkko3G2R/0OS8s7ceSV/p4zljtgCNtls5A6TT2Ehsoxhqh6PHRRuK4gvhPn8gYtBXjQHkj0VWkr9VoPdEt3NQIr0MkBmwAgt5YkTCV1EZPOAnsLSnQrwIDAQAB";
 
 const groups = [
   ["Rising Stars", "Sadler Sena", "Richmond Tigers", "Richmond Gajendras"],
@@ -100,33 +103,84 @@ function matches(markdown) {
   });
 }
 
-async function reader(path = "") {
-  let lastStatus = 0;
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
-    const response = await fetch(`${READER}${path}`, {
-      headers: { accept: "text/plain", "user-agent": "GRTA-standings-collector/1.0", "x-no-cache": "true", "x-return-format": "markdown" },
-      signal: AbortSignal.timeout(45000),
-    });
-    if (response.ok) return response.text();
-    lastStatus = response.status;
-    if (attempt < 3) await new Promise((resolveDelay) => setTimeout(resolveDelay, attempt * 15000));
-  }
-  throw new Error(`Reader returned ${lastStatus}.`);
+function contentToken() {
+  const lines = PUBLIC_KEY_BODY.match(/.{1,64}/g).join("\n");
+  const key = `-----BEGIN PUBLIC KEY-----\n${lines}\n-----END PUBLIC KEY-----`;
+  return publicEncrypt(
+    { key, padding: constants.RSA_PKCS1_PADDING },
+    Buffer.from(`core-${Date.now()}`),
+  ).toString("base64");
 }
 
-const table = standings(await reader());
-let matchList = [];
-try {
-  matchList = matches(await reader("/listMatches.do?league=21&clubId=1004528"));
-} catch (error) {
-  console.warn(`Match details skipped: ${error.message}`);
+async function core(path, params) {
+  const search = new URLSearchParams({ v: APP_VERSION, "X-Auth-Token": "null", ...params });
+  const response = await fetch(`${CORE}${path}?${search}`, {
+    headers: { accept: "application/json", origin: "https://app.cricclubs.com", "x-content-token": contentToken() },
+    signal: AbortSignal.timeout(30000),
+  });
+  const payload = await response.json();
+  if (!response.ok || !payload.responseState || !Array.isArray(payload.data)) {
+    throw new Error(payload.errorMessage || `CricClubs API returned ${response.status}.`);
+  }
+  return payload.data;
 }
+
+function standingsFromApi(data) {
+  const rows = [];
+  for (const group of data) {
+    for (const item of group.teams || []) {
+      const source = item.team || {};
+      const team = teamName(source.teamName || item.teamName || "");
+      const groupNumber = groupFor(team);
+      if (!groupNumber) continue;
+      rows.push({
+        rank: 0, group: groupNumber, groupRank: 0, team,
+        played: Number(source.matches || 0), won: Number(source.won || 0), lost: Number(source.lost || 0),
+        tied: Number(source.tied || source.tie || 0), noResult: Number(source.noResult || source.abandoned || 0),
+        points: Number(source.points || 0), nrr: Number.isFinite(Number(source.netRunRate)) ? Number(source.netRunRate) : null,
+        isGroupWinner: false, tieUnresolved: false, division: "Eliminated", qualification: "Below cut line", knockout: "—",
+      });
+    }
+  }
+  if (rows.length !== 44) throw new Error(`Expected 44 teams; received ${rows.length}.`);
+  return rank(rows);
+}
+
+function oversFromBalls(balls) {
+  const value = Number(balls || 0);
+  return `${Math.floor(value / 6)}.${value % 6}`;
+}
+
+function matchesFromApi(data) {
+  return data.map((source) => {
+    const complete = Number(source.isComplete) === 1;
+    const live = !complete && String(source.status).toLowerCase() === "live";
+    const teamA = teamName(source.teamOneName || "TBD");
+    const teamB = teamName(source.teamTwoName || "TBD");
+    const scoreA = Number(source.t1balls || source.t1total) > 0 ? `${source.t1total}/${source.t1wickets} (${oversFromBalls(source.t1balls)} ov)` : undefined;
+    const scoreB = Number(source.t2balls || source.t2total) > 0 ? `${source.t2total}/${source.t2wickets} (${oversFromBalls(source.t2balls)} ov)` : undefined;
+    return {
+      id: String(source.matchId), teamA, teamB, scoreA, scoreB,
+      result: source.result || undefined, date: source.matchDate || undefined,
+      status: complete ? "complete" : live ? "live" : "scheduled",
+      url: `https://cricclubs.com/GRTA1/viewScorecard.do?clubId=1004528&matchId=${source.matchId}`,
+      matchType: source.matchType || "l",
+    };
+  });
+}
+
+const [pointsData, matchesData] = await Promise.all([
+  core("/team/getPointsTable", { clubId: "1004528", seriesId: "21" }),
+  core("/match/getMatches", { clubId: "1004528", seriesId: "21", limit: "100", offSet: "0" }),
+]);
+const table = standingsFromApi(pointsData);
+const matchList = matchesFromApi(matchesData);
 
 const snapshot = {
   generatedAt: new Date().toISOString(), source: "github-collector", competition: "GRTA 2026 • League 21",
   liveMatches: matchList.filter((match) => match.status === "live"),
   recentMatches: matchList.filter((match) => match.status === "complete").slice(0, 8),
-  playoffMatches: [], standings: table,
+  playoffMatches: matchList.filter((match) => match.matchType !== "l"), standings: table,
   completedGroupMatches: Math.min(66, Math.round(table.reduce((sum, row) => sum + row.played, 0) / 2)), warnings: [],
 };
 
@@ -140,5 +194,3 @@ if (previous && comparable(previous) === comparable(snapshot)) {
 await mkdir(dirname(output), { recursive: true });
 await writeFile(output, `${JSON.stringify(snapshot, null, 2)}\n`);
 console.log(`Saved ${snapshot.completedGroupMatches} completed group matches.`);
-
-// Collector revision 1

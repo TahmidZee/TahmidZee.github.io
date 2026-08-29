@@ -140,3 +140,5 @@ if (previous && comparable(previous) === comparable(snapshot)) {
 await mkdir(dirname(output), { recursive: true });
 await writeFile(output, `${JSON.stringify(snapshot, null, 2)}\n`);
 console.log(`Saved ${snapshot.completedGroupMatches} completed group matches.`);
+
+// Collector revision 1

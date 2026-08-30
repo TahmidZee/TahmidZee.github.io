@@ -1,9 +1,21 @@
 {
-  "generatedAt": "2026-08-29T22:42:26.265Z",
+  "generatedAt": "2026-08-30T00:43:48.136Z",
   "source": "github-collector",
   "competition": "GRTA 2026 • League 21",
   "liveMatches": [],
   "recentMatches": [
+    {
+      "id": "1204",
+      "teamA": "H Burg Kings",
+      "teamB": "Titans",
+      "scoreA": "0/0 (6.0 ov)",
+      "scoreB": "1/0 (6.0 ov)",
+      "result": "Titans won by 5 Wickets",
+      "date": "08/29/2026",
+      "status": "complete",
+      "url": "https://cricclubs.com/GRTA1/viewScorecard.do?clubId=1004528&matchId=1204",
+      "matchType": "l"
+    },
     {
       "id": "1203",
       "teamA": "Royals",
@@ -45,8 +57,8 @@
       "teamA": "Richmond Gajendras",
       "teamB": "Richmond Tigers",
       "scoreA": "109/1 (6.0 ov)",
-      "scoreB": "55/4 (6.0 ov)",
-      "result": "Richmond Gajendras won by 54 Runs",
+      "scoreB": "54/4 (6.0 ov)",
+      "result": "Richmond Gajendras won by 55 Runs",
       "date": "08/29/2026",
       "status": "complete",
       "url": "https://cricclubs.com/GRTA1/viewScorecard.do?clubId=1004528&matchId=1200",
@@ -86,18 +98,6 @@
       "date": "08/29/2026",
       "status": "complete",
       "url": "https://cricclubs.com/GRTA1/viewScorecard.do?clubId=1004528&matchId=1197",
-      "matchType": "l"
-    },
-    {
-      "id": "1196",
-      "teamA": "Southern Caps",
-      "teamB": "Knights",
-      "scoreA": "86/2 (6.0 ov)",
-      "scoreB": "60/4 (6.0 ov)",
-      "result": "Southern Caps won by 26 Runs",
-      "date": "08/29/2026",
-      "status": "complete",
-      "url": "https://cricclubs.com/GRTA1/viewScorecard.do?clubId=1004528&matchId=1196",
       "matchType": "l"
     }
   ],
@@ -312,7 +312,7 @@
       "tied": 0,
       "noResult": 0,
       "points": 4,
-      "nrr": 7.5,
+      "nrr": 7.5556,
       "isGroupWinner": false,
       "tieUnresolved": false,
       "division": "Division I",
@@ -504,13 +504,13 @@
       "group": 7,
       "groupRank": 3,
       "team": "H Burg Kings",
-      "played": 2,
+      "played": 3,
       "won": 1,
-      "lost": 1,
+      "lost": 2,
       "tied": 0,
       "noResult": 0,
       "points": 2,
-      "nrr": -0.2394,
+      "nrr": -0.162,
       "isGroupWinner": false,
       "tieUnresolved": false,
       "division": "Division III",
@@ -555,6 +555,24 @@
     },
     {
       "rank": 26,
+      "group": 7,
+      "groupRank": 4,
+      "team": "Titans",
+      "played": 3,
+      "won": 1,
+      "lost": 2,
+      "tied": 0,
+      "noResult": 0,
+      "points": 2,
+      "nrr": -1.3951,
+      "isGroupWinner": false,
+      "tieUnresolved": false,
+      "division": "Division III",
+      "qualification": "Overall ranking",
+      "knockout": "Division III QF 3 vs Rank 23"
+    },
+    {
+      "rank": 27,
       "group": 3,
       "groupRank": 4,
       "team": "Rutland Royals",
@@ -569,10 +587,10 @@
       "tieUnresolved": false,
       "division": "Division III",
       "qualification": "Overall ranking",
-      "knockout": "Division III QF 3 vs Rank 23"
+      "knockout": "Division III QF 2 vs Rank 22"
     },
     {
-      "rank": 27,
+      "rank": 28,
       "group": 10,
       "groupRank": 2,
       "team": "Sadler Thunders",
@@ -587,10 +605,10 @@
       "tieUnresolved": false,
       "division": "Division III",
       "qualification": "Overall ranking",
-      "knockout": "Division III QF 2 vs Rank 22"
+      "knockout": "Division III QF 1 vs Rank 21"
     },
     {
-      "rank": 28,
+      "rank": 29,
       "group": 10,
       "groupRank": 3,
       "team": "Chennai -28",
@@ -603,12 +621,12 @@
       "nrr": -1.7381,
       "isGroupWinner": false,
       "tieUnresolved": false,
-      "division": "Division III",
-      "qualification": "Overall ranking",
-      "knockout": "Division III QF 1 vs Rank 21"
+      "division": "Eliminated",
+      "qualification": "Below cut line",
+      "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 29,
+      "rank": 30,
       "group": 1,
       "groupRank": 3,
       "team": "Richmond Tigers",
@@ -618,7 +636,7 @@
       "tied": 0,
       "noResult": 0,
       "points": 2,
-      "nrr": -2.0577,
+      "nrr": -2.1196,
       "isGroupWinner": false,
       "tieUnresolved": false,
       "division": "Eliminated",
@@ -626,7 +644,7 @@
       "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 30,
+      "rank": 31,
       "group": 10,
       "groupRank": 4,
       "team": "Ustaad Sixers",
@@ -644,7 +662,7 @@
       "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 31,
+      "rank": 32,
       "group": 2,
       "groupRank": 3,
       "team": "LION Kings",
@@ -662,7 +680,7 @@
       "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 32,
+      "rank": 33,
       "group": 6,
       "groupRank": 3,
       "team": "Challengers",
@@ -680,7 +698,7 @@
       "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 33,
+      "rank": 34,
       "group": 5,
       "groupRank": 3,
       "team": "Legends",
@@ -698,7 +716,7 @@
       "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 34,
+      "rank": 35,
       "group": 8,
       "groupRank": 3,
       "team": "HCC",
@@ -716,7 +734,7 @@
       "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 35,
+      "rank": 36,
       "group": 9,
       "groupRank": 3,
       "team": "Sadler Sixers",
@@ -734,7 +752,7 @@
       "knockout": "Eliminated after league stage"
     },
     {
-      "rank": 36,
+      "rank": 37,
       "group": 2,
       "groupRank": 4,
       "team": "Richmond Cricket Club",
@@ -745,24 +763,6 @@
       "noResult": 0,
       "points": 0,
       "nrr": -1.8232,
-      "isGroupWinner": false,
-      "tieUnresolved": false,
-      "division": "Eliminated",
-      "qualification": "Below cut line",
-      "knockout": "Eliminated after league stage"
-    },
-    {
-      "rank": 37,
-      "group": 7,
-      "groupRank": 4,
-      "team": "Titans",
-      "played": 2,
-      "won": 0,
-      "lost": 2,
-      "tied": 0,
-      "noResult": 0,
-      "points": 0,
-      "nrr": -2.2653,
       "isGroupWinner": false,
       "tieUnresolved": false,
       "division": "Eliminated",
@@ -896,6 +896,6 @@
       "knockout": "Eliminated after league stage"
     }
   ],
-  "completedGroupMatches": 65,
+  "completedGroupMatches": 66,
   "warnings": []
 }

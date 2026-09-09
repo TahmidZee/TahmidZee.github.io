@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { constants, publicEncrypt } from "node:crypto";
 
@@ -184,13 +184,6 @@ const snapshot = {
   completedGroupMatches: Math.min(66, Math.round(table.reduce((sum, row) => sum + row.played, 0) / 2)), warnings: [],
 };
 
-let previous;
-try { previous = JSON.parse(await readFile(output, "utf8")); } catch {}
-const comparable = (value) => JSON.stringify({ ...value, generatedAt: undefined });
-if (previous && comparable(previous) === comparable(snapshot)) {
-  console.log("No standings change.");
-  process.exit(0);
-}
 await mkdir(dirname(output), { recursive: true });
 await writeFile(output, `${JSON.stringify(snapshot, null, 2)}\n`);
 console.log(`Saved ${snapshot.completedGroupMatches} completed group matches.`);

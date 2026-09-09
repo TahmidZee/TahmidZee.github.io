@@ -1,12 +1,11 @@
 ---
-layout: cv
+layout: page
 permalink: /cv/
-title: CV
+title: Résumé
 nav: false
-nav_order: 4
-cv_pdf: /assets/rendercv/rendercv_output/Tahmid_Zaman_Tahi_CV.pdf
-cv_format: rendercv
-description: Education, research interests, publications, awards, and technical skills.
-toc:
-  sidebar: left
+sitemap: false
+search: false
+redirect: /assets/rendercv/rendercv_output/Tahmid_Zaman_Tahi_CV.pdf
 ---
+
+[Open or download my résumé (PDF)]({{ '/assets/rendercv/rendercv_output/Tahmid_Zaman_Tahi_CV.pdf' | relative_url }}).

@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<div class="post field-notes-page">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if page.type == 'year' %}Field Notes · {{ page.date | date: '%Y' }}{% else %}{{ page.title | replace: '-', ' ' | capitalize }}{% endif %}
+    </h1>
+  </header>
+  <nav class="notes-filters" aria-label="Browse Field Notes">
+    <a href="{{ '/notes/' | relative_url }}">All notes</a>
+    <a
+      href="{{ '/notes/category/research-notes/' | relative_url }}"
+      {% if page.title == 'research-notes' %}
+        aria-current="page"
+      {% endif %}
+      >Research notes</a
+    >
+    <a
+      href="{{ '/notes/tag/beyond-research/' | relative_url }}"
+      {% if page.title == 'beyond-research' %}
+        aria-current="page"
+      {% endif %}
+      >Beyond research</a
+    >
+  </nav>
+  <ul class="note-list">
+    {% for document in page.documents %}
+      <li>
+        <time class="note-meta" datetime="{{ document.date | date_to_xmlschema }}">{{ document.date | date: '%B %Y' }}</time>
+        <h2>
+          {% if document.redirect contains '://' %}
+            <a href="{{ document.redirect }}">{{ document.title }}</a>
+          {% else %}
+            <a href="{{ document.redirect | default: document.url | relative_url }}">{{ document.title }}</a>
+          {% endif %}
+        </h2>
+        {% if document.description %}
+          <p>{{ document.description }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

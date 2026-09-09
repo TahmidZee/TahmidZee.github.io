@@ -1,227 +1,36 @@
-research_themes:
-  - icon: fa-solid fa-location-crosshairs
-    title: Wireless sensing and localization
-    description: Hybrid model-based and learned methods for multi-antenna, RIS-assisted, and near-field systems.
-    tags:
-      - MIMO / RIS
-      - CSI & channels
-      - MUSIC / MVDR
-    url: /research/#learning-enabled-wireless-sensing-and-localization
-
-  - icon: fa-solid fa-wave-square
-    title: Learning for communications
-    description: Signal-aware neural systems for channel reconstruction, modulation recognition, and low-SNR robustness.
-    tags:
-      - I/Q & AMR
-      - Conditional ML
-      - Low SNR
-    url: /research/#signal-processing-and-machine-learning-for-communications
-
-  - icon: fa-solid fa-shield-halved
-    title: Trustworthy connected systems
-    description: Context-aware reliability, resource allocation, and security for V2X and edge-assisted systems.
-    tags:
-      - C-V2X
-      - Networking
-      - Security
-    url: /research/#trustworthy-connected-systems
-
-core_expertise:
-  - icon: fa-solid fa-tower-broadcast
-    title: Wireless communications & physical layer
-    summary: System-level and link-level reasoning across propagation, multi-antenna links, intelligent surfaces, and connected-vehicle communications.
-    domains:
-      - title: Physical-layer foundations
-        items:
-          - Complex baseband systems
-          - Digital modulation & detection
-          - Link budgets, path loss & fading
-          - SNR, SINR & BER analysis
-          - Throughput & spectral efficiency
-      - title: MIMO, antennas & channel acquisition
-        items:
-          - Multi-antenna / MIMO systems
-          - Antenna arrays & steering vectors
-          - AoA / AoD channel geometry
-          - Beamforming & phase control
-          - CSI and channel estimation
-      - title: RIS-assisted & connected wireless systems
-        items:
-          - Large-scale RIS / IRS
-          - NOMA & successive interference cancellation
-          - Pilot-overhead reduction
-          - Energy efficiency & user fairness
-          - C-V2X sidelink communication
-          - HARQ retransmission & throughput analysis
-    evidence:
-      - label: ICCCN 2026
-        url: /publications/#alam2026deep
-      - label: C-V2X research
-        url: /research/#trustworthy-connected-systems
-
-  - icon: fa-solid fa-wave-square
-    title: Array signal processing & wireless sensing
-    summary: Model-based and learned estimation methods for spatial inference, channel reconstruction, and robust signal intelligence.
-    domains:
-      - title: Spatial estimation & localization
-        items:
-          - Sample and learned covariance
-          - MUSIC and MVDR / Capon
-          - Spatial spectra & peak detection
-          - AoA, range & multi-source localization
-          - Near-field spherical-wave modeling
-      - title: Channels, propagation & sensing
-        items:
-          - Geometric multipath channels
-          - Block fading & mobility models
-          - Cascaded RIS channel modeling
-          - Partial / full CSI reconstruction
-          - Channel-quality conditioning
-      - title: Signal intelligence
-        items:
-          - Raw complex I/Q processing
-          - Automatic modulation recognition
-          - Low-SNR robustness
-          - Spatiotemporal signal features
-          - Ablations & statistical testing
-    evidence:
-      - label: RIS localization
-        url: /projects/ris-localization/
-      - label: MILCOM 2026
-        url: /publications/#tahi2026brfilm
-
-supporting_skills:
-  - icon: fa-solid fa-brain
-    title: Learning for RF & communications
-    summary: Hybrid model-based and data-driven methods designed around signal structure and operating conditions.
-    featured:
-      - PyTorch
-      - TensorFlow
-      - scikit-learn
-      - CNN / RNN / LSTM
-      - Transformers
-      - FiLM & conditional networks
-      - Diffusion models
-      - Reinforcement learning / DQN
-      - Multi-objective learning
-      - Hyperparameter optimization
-
-  - icon: fa-solid fa-code
-    title: Scientific computing & simulation
-    summary: Reproducible numerical experiments spanning simulation, training, analysis, and technical communication.
-    featured:
-      - Python
-      - MATLAB / Simulink
-      - NumPy / SciPy
-      - pandas
-      - Matplotlib
-      - C
-      - Shell scripting
-      - Git / GitHub
-      - LaTeX
-      - GPU experiments
-
-  - icon: fa-solid fa-network-wired
-    title: Networking & connected systems
-    summary: Communication-aware engineering from embedded sensing and cloud IoT to cellular planning and secure connected vehicles.
-    featured:
-      - Arduino / embedded sensing
-      - ThingSpeak / cloud IoT
-      - Cellular planning
-      - 5G NR-V2X / C-V2X
-      - Latency & reliability
-      - Connected-vehicle security
-      - Context-aware anomaly analysis
-      - IoT / NMS
-      - Atoll
-      - Cisco Packet Tracer
-      - Linux
-      - UAT & troubleshooting
-
-additional_tools:
-  - Git / GitHub
-  - LaTeX
-  - HTML / CSS
-  - Node.js
-  - PSpice
-  - Proteus
-  - PSIM
-  - ARM Keil
-  - JMP
-
 featured_projects:
-  - eyebrow: Featured research
-    icon: fa-solid fa-location-dot
+  - eyebrow: MILCOM 2026 · Accepted paper
+    title: BR-FiLM
+    description: Channel-quality conditioning for modulation recognition, with bounded residual updates that preserve the I/Q feature path.
+    tags: [Modulation recognition, FiLM, MCLDNN, RadioML 2016.10a]
+    url: /projects/br-film/
+
+  - eyebrow: Research implementation
     title: Hybrid RIS Localization
-    description: A learned covariance pipeline with K-free MVDR inference for multi-source angle and range estimation.
-    tags:
-      - PyTorch
-      - MVDR
-      - Near field
+    description: Learned covariance estimation and MVDR spectra for source localization without knowing the source count in advance.
+    tags: [Antenna arrays, Covariance estimation, MVDR, Near-field localization]
     url: /projects/ris-localization/
-    accent: cyan
 
-  - eyebrow: Signal intelligence
-    icon: fa-solid fa-chart-line
+  - eyebrow: Research implementation
     title: DiT-AMC
-    description: Diffusion-regularized transformers for automatic modulation classification under changing SNR.
-    tags:
-      - Transformers
-      - Diffusion
-      - RadioML
+    description: A transformer classifier with diffusion regularization during training and single-pass inference.
+    tags: [I/Q signals, Transformers, Diffusion regularization]
     url: /projects/dit-amc/
-    accent: violet
 
-  - eyebrow: Connected systems
-    icon: fa-solid fa-car-side
-    title: Reliable & Trustworthy V2X
-    description: Resource allocation, low-latency retransmission, and context-aware monitoring for connected vehicles.
-    tags:
-      - C-V2X
-      - HARQ
-      - Security
+  - eyebrow: ITEC 2026 · Review · Undergraduate thesis
+    title: V2X Reliability and Security
+    description: Three studies on context-aware anomaly detection, resource allocation, and low-latency sidelink retransmission.
+    tags: [C-V2X, HARQ, Unsupervised learning]
     url: /projects/cv2x-systems/
-    accent: coral
 
-  - eyebrow: IoT & cloud control
-    icon: fa-solid fa-house-signal
+  - eyebrow: Engineering prototype
     title: Smart Home HVAC Control
-    description: An Arduino–ThingSpeak prototype that senses temperature, humidity, and light and generates cloud-based HVAC and blind-control states.
-    tags:
-      - Arduino MKR
-      - ThingSpeak
-      - MATLAB
+    description: Arduino sensing and ThingSpeak control logic for monitoring indoor conditions and computing equipment states.
+    tags: [Arduino MKR WiFi 1010, ThingSpeak, MATLAB]
     url: /projects/iot-hvac/
-    accent: lime
 
   - eyebrow: Earlier work
-    icon: fa-solid fa-route
     title: Learning for Path Planning
-    description: Experiments connecting classical planning, deep Q-learning, and reinforcement learning for navigation.
-    tags:
-      - DQN
-      - RL
-      - Planning
+    description: Navigation experiments using classical planning, machine learning, and reinforcement learning.
+    tags: [Path planning, Deep Q-learning, Maze navigation]
     url: /projects/learning-path-planning/
-    accent: violet
-
-timeline:
-  - date: 2025 — Now
-    role: PhD Researcher · Graduate Research Assistant
-    organization: Virginia Commonwealth University
-    description: Intelligent-surface-assisted wireless communications with Dr. Yanxiao Zhao.
-
-  - date: 2023 — 2024
-    role: M.S. Electrical Engineering · Graduate Teaching Assistant
-    organization: The George Washington University
-    description: Signals, systems, DSP, and engineering analysis instruction alongside graduate research.
-
-  - date: 2021 — 2022
-    role: Engineer, Network Infrastructure
-    organization: ADN Telecom Limited
-    description: Link budgets, network planning, IoT/NMS deployment, technical validation, and troubleshooting.
-
-  - date: 2017 — 2021
-    role: B.S. Electrical & Electronic Engineering
-    organization: Islamic University of Technology
-    description: C-V2X sidelink research and a foundation in communications, electronics, and signal processing.

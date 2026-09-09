@@ -2,48 +2,51 @@
 layout: page
 title: Research
 permalink: /research/
-description: Research themes in wireless AI, localization, signal processing, and trustworthy connected systems.
+description: Wireless communications, signal processing, and machine learning.
 nav: true
 nav_order: 1
-toc:
-  sidebar: left
 ---
 
-My research combines structure from wireless communications and signal processing with the adaptability of modern machine learning. I am especially interested in systems where the learning problem cannot be separated from the physics, geometry, or operational context of the communication link.
+I study how learning-based methods can use the structure of wireless signals and channels. My current work at VCU focuses on intelligent surfaces, localization, and modulation recognition. My earlier work includes C-V2X resource allocation and retransmission.
 
 ## Learning-enabled wireless sensing and localization
 
-Future wireless infrastructure will increasingly act as both a communication medium and a sensor. Reconfigurable intelligent surfaces, multi-antenna links, large arrays, and near-field propagation create new communication and localization opportunities, but they also introduce high-dimensional channel-estimation problems.
+In reconfigurable intelligent surface (RIS) systems, estimating the channel and choosing surface phase shifts are closely related problems. Our ICCCN 2026 paper combines a channel-reconstruction network with a phase-prediction network, using measurements from only 6% of the RIS elements.
 
-I explore hybrid pipelines that combine neural networks with physical-layer and array-processing models. This includes partial-CSI reconstruction and RIS phase control for NOMA systems, alongside model-based estimators such as MUSIC and MVDR for spatial localization. The goal is not to replace signal processing blindly, but to learn the components that are difficult to model while preserving interpretable structure where it remains useful.
+In the paper’s simulations, the hybrid training strategy improves throughput by 32% and energy efficiency by 37% over fixed-weight training. These are comparisons within the simulated RIS–NOMA setting, not field-deployment results.
 
-**Current questions**
+<figure class="project-figure">
+  <ol class="method-pipeline" aria-label="RIS–NOMA inference pipeline">
+    <li><strong>Partial CSI</strong><span>Measurements from active RIS elements</span></li>
+    <li><strong>DSRNetV2</strong><span>Reconstruct full channel information</span></li>
+    <li><strong>PhaseNet</strong><span>Predict surface phase shifts</span></li>
+    <li><strong>RIS–NOMA link</strong><span>Evaluate throughput and energy efficiency</span></li>
+  </ol>
+  <figcaption>Overview of the joint estimation and phase-prediction approach in our ICCCN 2026 paper.</figcaption>
+</figure>
 
-- How can a model infer location reliably when the number of sources is not known in advance?
-- Which array or surface elements provide the most useful localization information?
-- How can learned covariance and spectral estimates remain robust across SNRs, geometries, and deployment conditions?
+[ICCCN paper · IEEE Xplore](https://ieeexplore.ieee.org/document/11662608)
+
+For localization, I investigate learned covariance estimates alongside array-processing methods such as MUSIC and MVDR. The [hybrid RIS localization project]({{ '/projects/ris-localization/' | relative_url }}) uses spatial spectra to estimate source angles and ranges without supplying the number of sources in advance. Related published work studies deep-learning-based angle-of-arrival and distance estimation in IRS systems.
+
+[IRS localization journal article](https://www.zealpress.com/index.php/jaicde/article/view/692)
 
 ## Signal processing and machine learning for communications
 
-Wireless observations are noisy, structured, and strongly dependent on channel conditions. My work studies architectures that treat those properties as design information rather than generic nuisance variation.
+Automatic modulation recognition identifies a signal’s modulation from its I/Q samples. At low signal-to-noise ratios, noise can obscure the features that distinguish modulation types.
 
-Current experiments include channel-quality-conditioned automatic modulation recognition from raw I/Q samples, diffusion-regularized transformer models, covariance prediction for spectral localization, multi-window evidence aggregation, and learning-assisted refinement of angle and range estimates.
+Our MILCOM 2026 paper introduces **BR-FiLM**, which uses channel-quality information to make bounded, gated adjustments to a classifier’s intermediate features. The original I/Q feature path is retained. On RadioML 2016.10a, the reported low-SNR accuracy increases from 37.12% to 46.44% relative to MCLDNN.
 
-**Methods**
+[BR-FiLM paper · arXiv](https://arxiv.org/abs/2608.18395) · [Method and evaluation]({{ '/projects/br-film/' | relative_url }})
 
-- MIMO and antenna-array modeling, geometric channels, CSI estimation, RIS phase control, NOMA/SIC, and link-level evaluation
-- Complex baseband and I/Q processing, automatic modulation recognition, and low-SNR analysis
-- PyTorch-based model development and GPU training
-- CNN/RNN/LSTM models, transformers, conditional networks, learned representations, and reinforcement learning
-- MUSIC/MVDR spectral estimation and hybrid covariance modeling
-- Simulation, ablation studies, hyperparameter optimization, and SNR-stratified evaluation
+In a separate implementation, [DiT-AMC]({{ '/projects/dit-amc/' | relative_url }}) explores diffusion regularization during transformer training while keeping classification inference single-pass.
 
 ## Trustworthy connected systems
 
-Connected and autonomous systems depend on both wireless links and shared edge resources. Their behavior can change with traffic, weather, network load, control configuration, and adversarial interference.
+My connected-vehicle research examines communication reliability and abnormal operating conditions in V2X and edge-assisted systems.
 
-My V2X work considers resource allocation and context-aware functional security: monitoring operational performance relative to the conditions under which a system is expected to operate. This direction connects communication reliability with interpretable anomaly detection and safety-oriented evaluation.
+Our ITEC 2026 paper studies unsupervised functional-security monitoring without labeled attack data. A central finding is that calibrating anomaly thresholds separately for network-slice and weather contexts substantially improves detection in the paper’s synthetic stress tests. In that small snapshot dataset, a deterministic autoencoder outperforms the conditional generative models at the chosen operating point.
 
-## Collaboration
+[ITEC paper · IEEE Xplore](https://ieeexplore.ieee.org/document/11593013) · [V2X work and earlier studies]({{ '/projects/cv2x-systems/' | relative_url }})
 
-I welcome conversations about wireless AI, intelligent surfaces, sensing and localization, communication-aware machine learning, V2X, and trustworthy cyber-physical systems. Please reach out by [email](mailto:tahi.tahmid@gmail.com) if there is a potential research overlap.
+For research collaborations, please [email me](mailto:tahi.tahmid@gmail.com).

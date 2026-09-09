@@ -1,27 +1,39 @@
 ---
 layout: page
 title: Hybrid RIS Localization
-description: Learning-assisted covariance prediction and K-free MVDR localization for intelligent-surface systems.
-img: assets/img/projects/ris-localization.svg
-importance: 1
+description: Learned covariance estimation and MVDR for multi-source angle and range estimation.
+importance: 2
 category: wireless-ai
-related_publications: true
 ---
 
-This research codebase studies multi-source localization in reconfigurable intelligent surface (RIS) systems. The pipeline combines a neural backbone that predicts covariance structure with classical MVDR spectral estimation and two-dimensional peak detection.
+[MVDR implementation](https://github.com/TahmidZee/ris-localization-mvdr) · [Near-field experiments](https://github.com/TahmidZee/ris-localization-nearfield)
 
-## Research idea
+## Problem and approach
 
-Model-based localization is interpretable but can be brittle when measurements are limited or the environment is mismatched. Purely learned localization can be difficult to diagnose. This project explores the middle ground: use learning to estimate difficult latent structure, then retain a physically meaningful spectral estimator for inference.
+This implementation studies source localization in reconfigurable intelligent surface (RIS) systems. It combines a neural covariance estimator with a model-based spatial search, rather than predicting source coordinates directly.
+
+A key design choice is to estimate source locations **without being given the number of sources**. This is the meaning of “K-free” in the implementation.
 
 ## Pipeline
 
-1. Convert RIS measurements, channel information, and surface codes into learned covariance factors.
-2. Blend predicted and sample covariance estimates for robustness.
-3. Compute an MVDR spatial spectrum without requiring the number of sources in advance.
-4. Detect peaks to recover angle and range estimates.
-5. Optionally refine the spectrum with a lightweight CNN.
+<figure class="project-figure">
+  <ol class="method-pipeline" aria-label="Hybrid localization pipeline">
+    <li><strong>RIS measurements</strong><span>Signals, channel information, and surface codes</span></li>
+    <li><strong>Covariance estimate</strong><span>Learned factors blended with sample covariance</span></li>
+    <li><strong>MVDR spectrum</strong><span>Search over candidate angles and ranges</span></li>
+    <li><strong>Peak detection</strong><span>Recover source locations</span></li>
+  </ol>
+  <figcaption>Overview of the implemented inference pipeline. An optional CNN refines the spatial spectrum before peak detection.</figcaption>
+</figure>
 
-The repositories include data generation, hyperparameter optimization, staged training, evaluation, and GPU implementations of MUSIC/MVDR components.
+The neural model predicts covariance structure. MVDR then uses the array model to form a spatial spectrum, and two-dimensional peak detection identifies candidate locations. Near-field experiments account for spherical-wave geometry.
 
-[MVDR repository](https://github.com/TahmidZee/ris-localization-mvdr) · [Near-field experiments](https://github.com/TahmidZee/ris-localization-nearfield)
+## Implementation and evaluation
+
+The repositories contain simulation data generation, staged training, hyperparameter search, and GPU implementations of MUSIC/MVDR components. Evaluation examines angle and range estimates under changing source and signal conditions.
+
+The experiments focus on how measurement noise, covariance estimation, and source geometry affect the spatial spectrum and the recovered locations.
+
+## Related publication
+
+[Enhancing IRS Localization via Deep Learning-Based AOA and Distance Estimation](https://www.zealpress.com/index.php/jaicde/article/view/692), Journal of AI-Driven Communication Engineering, 2025.

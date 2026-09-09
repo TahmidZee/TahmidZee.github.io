@@ -1,20 +1,15 @@
 ---
 layout: page
 title: Learning for Path Planning
-description: Experiments connecting classical planning, supervised learning, and reinforcement learning for navigation.
-img: assets/img/projects/path-planning.svg
-importance: 3
+description: Earlier navigation experiments with classical planning and reinforcement learning.
+importance: 6
 category: connected-systems
 ---
 
-This project family explores how learning-based methods can complement path-planning algorithms in navigation tasks. The repositories cover maze-style reinforcement learning experiments and broader investigations of machine learning within planning pipelines.
+These earlier projects explore machine learning and reinforcement learning for navigation, including maze environments and deep Q-learning.
 
-## Questions explored
+- [Integrating ML into Path Planning](https://github.com/TahmidZee/Integrating-ML-into-Path-Planning)
+- [PathPlanningMLRL](https://github.com/TahmidZee/PathPlanningMLRL)
+- [RLmaze](https://github.com/TahmidZee/RLmaze)
 
-- When should a navigation system learn a policy instead of executing a fixed planner?
-- Can learned components improve adaptation without sacrificing interpretable constraints?
-- How should evaluation distinguish path quality, convergence, robustness, and computation cost?
-
-This earlier work helped establish the combination of machine learning and structured engineering methods that now motivates my wireless localization research.
-
-[Path-planning project](https://github.com/TahmidZee/Integrating-ML-into-Path-Planning) · [ML/RL experiments](https://github.com/TahmidZee/PathPlanningMLRL) · [RL maze](https://github.com/TahmidZee/RLmaze)
+The repositories are separate experiments rather than one combined system.

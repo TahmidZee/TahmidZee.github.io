@@ -1,16 +1,14 @@
 <header class="site-header">
   <nav
     id="navbar"
-    class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}"
+    class="navbar navbar-light {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}"
     role="navigation"
     aria-label="Primary navigation"
   >
     <div class="container">
       <a class="navbar-brand portfolio-brand" href="{{ '/' | relative_url }}">
-        <span class="brand-monogram" aria-hidden="true">TZ</span>
         <span class="brand-copy">
           <strong>Tahmid Zaman Tahi</strong>
-          <small>Wireless AI Researcher</small>
         </span>
       </a>
 

@@ -1,0 +1,71 @@
+---
+---
+{% assign paper_url = entry.html %}
+{% if paper_url == blank and entry.doi %}{% assign paper_url = entry.doi | prepend: 'https://doi.org/' %}{% endif %}
+{% if paper_url == blank and entry.arxiv %}{% assign paper_url = entry.arxiv | prepend: 'https://arxiv.org/abs/' %}{% endif %}
+<article class="paper-entry" id="{{ entry.key }}">
+  {% if entry.preview -%}
+    <img class="paper-preview" src="{{ entry.preview | relative_url }}" alt="{{ entry.preview_alt | default: entry.title | escape }}" loading="lazy">
+  {%- endif %}
+  <div class="title">
+    {% if paper_url -%}
+      <a href="{{ paper_url }}">{{ entry.title }}</a>
+    {%- else -%}
+      {{- entry.title -}}
+    {%- endif %}
+  </div>
+  <p class="author">
+    {%- for author in entry.author_array -%}
+      {%- unless forloop.first -%}, {% endunless -%}
+      {%- assign author_name = author.first | append: ' ' | append: author.last -%}
+      {%- if site.scholar.last_name contains author.last and site.scholar.first_name contains author.first -%}
+        <strong>{{ author_name }}</strong>
+      {%- else -%}
+        {{- author_name -}}
+      {%- endif -%}
+    {%- endfor -%}
+  </p>
+  <p class="periodical">
+    {% if entry.booktitle -%}
+      {{- entry.booktitle -}}
+    {%- elsif entry.journal -%}
+      {{- entry.journal -}}
+    {%- else -%}
+      {{- entry.institution }} · Undergraduate thesis
+    {%- endif %}
+    {% capture entry_year %}{{ entry.year }}{% endcapture %}
+    {% unless entry.journal contains entry_year or entry.booktitle contains entry_year %} · {{ entry.year }}{% endunless %}
+    {% if entry.status == 'accepted' %}
+      · <span class="paper-status">Accepted</span>
+    {%- endif %}
+    {% if entry.status == 'preprint' %}
+      · <span class="paper-status">Preprint</span>
+    {%- endif %}
+  </p>
+  {% if entry.summary %}
+    <p class="paper-summary">{{ entry.summary }}</p>
+  {% endif %}
+  <div class="paper-links" aria-label="Resources for {{ entry.title | escape }}">
+    {% if entry.html and entry.html contains 'ieeexplore.ieee.org' -%}
+      <a href="{{ entry.html }}">IEEE Xplore</a>
+    {% elsif entry.html and entry.arxiv == blank -%}
+      <a href="{{ entry.html }}">
+        {%- if entry.status == 'thesis' %}Thesis{% else %}Journal article{% endif -%}
+      </a>
+    {% elsif paper_url and entry.arxiv == blank -%}
+      <a href="{{ paper_url }}">Paper</a>
+    {%- endif %}
+    {% if entry.arxiv -%}
+      <a href="https://arxiv.org/abs/{{ entry.arxiv }}">arXiv</a>
+    {%- endif %}
+    {% if entry.pdf -%}
+      <a href="{{ entry.pdf }}">PDF</a>
+    {%- endif %}
+    {% if entry.code -%}
+      <a href="{{ entry.code }}">Code</a>
+    {%- endif %}
+    {% if entry.project -%}
+      <a href="{{ entry.project | relative_url }}">Project</a>
+    {%- endif %}
+  </div>
+</article>

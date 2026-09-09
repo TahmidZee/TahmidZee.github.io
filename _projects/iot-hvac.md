@@ -1,28 +1,33 @@
 ---
 layout: page
-title: IoT-Enabled Smart Home HVAC Control System
-description: Edge sensing and cloud-hosted decision logic for a lab-scale smart-home HVAC prototype.
-importance: 4
+title: Smart Home HVAC Control
+description: Arduino sensing and cloud-hosted control logic in a lab-scale prototype.
+importance: 5
 category: connected-systems
 ---
 
-I co-developed this lab-scale smart-home prototype with Sujay Saha. It connects environmental sensing on an Arduino MKR WiFi 1010 to cloud-hosted control logic in ThingSpeak, monitors temperature, relative humidity, and a UV-based brightness proxy, then computes and visualizes intended AC, heater, dehumidifier, and blind states.
+I co-developed this prototype with Sujay Saha. An Arduino MKR WiFi 1010 sends temperature, humidity, and a UV-based brightness proxy to ThingSpeak. Cloud-hosted MATLAB logic computes intended air-conditioner, heater, dehumidifier, and blind states.
 
 ## System architecture
 
-1. **Edge sensing:** A DHT11 and analog UV sensor provide temperature, humidity, and light measurements to the Arduino, which periodically uploads them over Wi-Fi.
-2. **Cloud decision layer:** A seven-field ThingSpeak channel stores three sensor inputs and four equipment-state outputs. Scheduled MATLAB Analysis applies the control rules and writes the resulting states back to the channel.
-3. **User layer:** Time-series plots and state widgets show both measurements and decisions, while the ThingSpeak Alerts API sends an email when the combined equipment state changes.
+<figure class="project-figure">
+  <ol class="method-pipeline" aria-label="HVAC monitoring and decision pipeline">
+    <li><strong>Environmental sensors</strong><span>DHT11 and analog UV sensor</span></li>
+    <li><strong>Arduino + Wi-Fi</strong><span>Read and upload measurements</span></li>
+    <li><strong>ThingSpeak + MATLAB</strong><span>Store measurements and apply control rules</span></li>
+    <li><strong>Equipment states</strong><span>Cloud fields, plots, and email alerts</span></li>
+  </ol>
+  <figcaption>The prototype computes control states in the cloud. It does not physically actuate HVAC equipment or blinds.</figcaption>
+</figure>
+
+A seven-field ThingSpeak channel holds three sensor inputs and four equipment-state outputs. Scheduled MATLAB Analysis updates the states, while plots and widgets display measurements and decisions. Email alerts are sent when the combined equipment state changes.
 
 ## Control and validation
 
-- Cooling is requested above 78 °F and heating below 62 °F.
-- Dehumidification is requested above 60% relative humidity when cooling is not the appropriate response.
-- Blind state depends on the daylight proxy, ambient brightness, and whether passive solar heating is useful.
-- A controllable lamp, portable heater, and humidifier provided repeatable stimuli for exercising every decision branch.
+Cooling is requested above 78 °F, heating below 62 °F, and dehumidification above 60% relative humidity when cooling is not the appropriate response. Blind decisions use the daylight proxy and whether passive solar heating would be useful.
 
-## Engineering lessons
+A controllable lamp, portable heater, and humidifier supplied repeatable stimuli to exercise the decision branches. The implementation handles invalid readings, Wi-Fi recovery, cloud write-rate limits, API errors, and state-change detection.
 
-The prototype required more than threshold logic. The implementation handles Wi-Fi recovery, invalid sensor readings, ThingSpeak’s write-rate limit, scheduled cloud execution, state-change detection, API errors, visualization, alerts, and step-by-step end-to-end debugging.
+## Limitations
 
-The current prototype represents actuator commands as cloud fields. Integrating physical relays, smart plugs, or motorized blinds is future work.
+Actuator commands are represented as cloud fields. Physical relays, smart plugs, and motorized blinds were not integrated into this prototype.

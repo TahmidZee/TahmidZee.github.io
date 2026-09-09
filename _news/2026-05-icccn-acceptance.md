@@ -13,4 +13,6 @@ related_posts: false
 
 Our paper, “Deep Learning-Enabled Energy-Efficient Joint CSI Estimation and Phase Shift Prediction in Large-Scale RIS-Assisted NOMA Systems,” was accepted for presentation at the 35th International Conference on Computer Communications and Networks (ICCCN 2026).
 
-The conference will be held July 27–30, 2026, in Honolulu, Hawaii. [Visit the ICCCN 2026 website](https://www.icccn.org/).
+The conference took place July 27–30, 2026, in Honolulu, Hawaii.
+
+**Update:** The paper is now [available on IEEE Xplore](https://ieeexplore.ieee.org/document/11662608).

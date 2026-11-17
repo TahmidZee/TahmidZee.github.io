@@ -6,7 +6,8 @@ const SCORECARDS = "https://cricclubs.com/GRTA1/listMatches.do?league=21&clubId=
 const output = resolve(process.argv[2] || "assets/data/grta-standings.json");
 const CORE = "https://core-prod-origin.cricclubs.com/core";
 const APP_VERSION = "4.0.341";
-const PUBLIC_KEY_BODY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNokj65NYc9LdYZshBi6I1BUVu8NdhcafSkzSugFVwUydw7t2DPaZcewxkko3G2R/0OS8s7ceSV/p4zljtgCNtls5A6TT2Ehsoxhqh6PHRRuK4gvhPn8gYtBXjQHkj0VWkr9VoPdEt3NQIr0MkBmwAgt5YkTCV1EZPOAnsLSnQrwIDAQAB";
+const PUBLIC_KEY_BODY =
+  "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNokj65NYc9LdYZshBi6I1BUVu8NdhcafSkzSugFVwUydw7t2DPaZcewxkko3G2R/0OS8s7ceSV/p4zljtgCNtls5A6TT2Ehsoxhqh6PHRRuK4gvhPn8gYtBXjQHkj0VWkr9VoPdEt3NQIr0MkBmwAgt5YkTCV1EZPOAnsLSnQrwIDAQAB";
 
 const groups = [
   ["Rising Stars", "Sadler Sena", "Richmond Tigers", "Richmond Gajendras"],
@@ -22,7 +23,11 @@ const groups = [
   ["Panthers", "Eagles", "OG's", "UCC"],
 ];
 
-const normalized = (value) => value.toLowerCase().replace(/\band\b/g, "").replace(/[^a-z0-9]/g, "");
+const normalized = (value) =>
+  value
+    .toLowerCase()
+    .replace(/\band\b/g, "")
+    .replace(/[^a-z0-9]/g, "");
 const teamLookup = new Map(groups.flatMap((teams) => teams.map((team) => [normalized(team), team])));
 
 function teamName(raw) {
@@ -58,8 +63,11 @@ function knockout(rank) {
 function rank(rows) {
   for (let group = 1; group <= groups.length; group += 1) {
     const ordered = rows.filter((row) => row.group === group).sort(compare);
-    const tied = ordered[0] && ordered[1] && ordered[0].points === ordered[1].points && ordered[0].won === ordered[1].won && ordered[0].nrr === ordered[1].nrr;
-    ordered.forEach((row, index) => Object.assign(row, { groupRank: index + 1, isGroupWinner: index === 0, tieUnresolved: index === 0 && Boolean(tied) }));
+    const tied =
+      ordered[0] && ordered[1] && ordered[0].points === ordered[1].points && ordered[0].won === ordered[1].won && ordered[0].nrr === ordered[1].nrr;
+    ordered.forEach((row, index) =>
+      Object.assign(row, { groupRank: index + 1, isGroupWinner: index === 0, tieUnresolved: index === 0 && Boolean(tied) })
+    );
   }
   const ordered = [...rows.filter((row) => row.isGroupWinner).sort(compare), ...rows.filter((row) => !row.isGroupWinner).sort(compare)];
   return ordered.map((row, index) => {
@@ -81,7 +89,24 @@ function standings(markdown) {
     const group = groupFor(team);
     if (!group) continue;
     const nrr = cells[9]?.match(/-?\d+(?:\.\d+)?/)?.[0];
-    rows.set(team, { rank: 0, group, groupRank: 0, team, played: cellNumber(cells[3]), won: cellNumber(cells[4]), lost: cellNumber(cells[5]), tied: 0, noResult: cellNumber(cells[6]), points: cellNumber(cells[7]), nrr: nrr == null ? null : Number(nrr), isGroupWinner: false, tieUnresolved: false, division: "Eliminated", qualification: "Below cut line", knockout: "—" });
+    rows.set(team, {
+      rank: 0,
+      group,
+      groupRank: 0,
+      team,
+      played: cellNumber(cells[3]),
+      won: cellNumber(cells[4]),
+      lost: cellNumber(cells[5]),
+      tied: 0,
+      noResult: cellNumber(cells[6]),
+      points: cellNumber(cells[7]),
+      nrr: nrr == null ? null : Number(nrr),
+      isGroupWinner: false,
+      tieUnresolved: false,
+      division: "Eliminated",
+      qualification: "Below cut line",
+      knockout: "—",
+    });
   }
   if (rows.size !== 44) throw new Error(`Expected 44 teams; received ${rows.size}.`);
   return rank([...rows.values()]);
@@ -99,17 +124,24 @@ function matches(markdown) {
     const live = Boolean(detail && /:\s*\d+\/\d+/.test(detail));
     const date = section.match(/^##\s+(\d{1,2})\s*\n\n#####\s+([A-Za-z]{3}\s+\d{4})/m);
     const url = section.match(/\[Scorecard\]\((https?:\/\/[^)]+)\)/)?.[1]?.replace("prod-lm.cricclubs.com", "cricclubs.com") || SCORECARDS;
-    return { id: section.match(/matchId=(\d+)/)?.[1] || `feed-${index}`, teamA: teamName(heading[1]), teamB: teamName(heading[2]), scoreA: scores[0] ? `${scores[0][1]} (${scores[0][2]} ov)` : undefined, scoreB: scores[1] ? `${scores[1][1]} (${scores[1][2]} ov)` : undefined, result: complete ? detail : undefined, date: date ? `${date[1]} ${date[2]}` : undefined, status: complete ? "complete" : live ? "live" : "scheduled", url };
+    return {
+      id: section.match(/matchId=(\d+)/)?.[1] || `feed-${index}`,
+      teamA: teamName(heading[1]),
+      teamB: teamName(heading[2]),
+      scoreA: scores[0] ? `${scores[0][1]} (${scores[0][2]} ov)` : undefined,
+      scoreB: scores[1] ? `${scores[1][1]} (${scores[1][2]} ov)` : undefined,
+      result: complete ? detail : undefined,
+      date: date ? `${date[1]} ${date[2]}` : undefined,
+      status: complete ? "complete" : live ? "live" : "scheduled",
+      url,
+    };
   });
 }
 
 function contentToken() {
   const lines = PUBLIC_KEY_BODY.match(/.{1,64}/g).join("\n");
   const key = `-----BEGIN PUBLIC KEY-----\n${lines}\n-----END PUBLIC KEY-----`;
-  return publicEncrypt(
-    { key, padding: constants.RSA_PKCS1_PADDING },
-    Buffer.from(`core-${Date.now()}`),
-  ).toString("base64");
+  return publicEncrypt({ key, padding: constants.RSA_PKCS1_PADDING }, Buffer.from(`core-${Date.now()}`)).toString("base64");
 }
 
 async function core(path, params) {
@@ -134,11 +166,22 @@ function standingsFromApi(data) {
       const groupNumber = groupFor(team);
       if (!groupNumber) continue;
       rows.push({
-        rank: 0, group: groupNumber, groupRank: 0, team,
-        played: Number(source.matches || 0), won: Number(source.won || 0), lost: Number(source.lost || 0),
-        tied: Number(source.tied || source.tie || 0), noResult: Number(source.noResult || source.abandoned || 0),
-        points: Number(source.points || 0), nrr: Number.isFinite(Number(source.netRunRate)) ? Number(source.netRunRate) : null,
-        isGroupWinner: false, tieUnresolved: false, division: "Eliminated", qualification: "Below cut line", knockout: "—",
+        rank: 0,
+        group: groupNumber,
+        groupRank: 0,
+        team,
+        played: Number(source.matches || 0),
+        won: Number(source.won || 0),
+        lost: Number(source.lost || 0),
+        tied: Number(source.tied || source.tie || 0),
+        noResult: Number(source.noResult || source.abandoned || 0),
+        points: Number(source.points || 0),
+        nrr: Number.isFinite(Number(source.netRunRate)) ? Number(source.netRunRate) : null,
+        isGroupWinner: false,
+        tieUnresolved: false,
+        division: "Eliminated",
+        qualification: "Below cut line",
+        knockout: "—",
       });
     }
   }
@@ -157,11 +200,18 @@ function matchesFromApi(data) {
     const live = !complete && String(source.status).toLowerCase() === "live";
     const teamA = teamName(source.teamOneName || "TBD");
     const teamB = teamName(source.teamTwoName || "TBD");
-    const scoreA = Number(source.t1balls || source.t1total) > 0 ? `${source.t1total}/${source.t1wickets} (${oversFromBalls(source.t1balls)} ov)` : undefined;
-    const scoreB = Number(source.t2balls || source.t2total) > 0 ? `${source.t2total}/${source.t2wickets} (${oversFromBalls(source.t2balls)} ov)` : undefined;
+    const scoreA =
+      Number(source.t1balls || source.t1total) > 0 ? `${source.t1total}/${source.t1wickets} (${oversFromBalls(source.t1balls)} ov)` : undefined;
+    const scoreB =
+      Number(source.t2balls || source.t2total) > 0 ? `${source.t2total}/${source.t2wickets} (${oversFromBalls(source.t2balls)} ov)` : undefined;
     return {
-      id: String(source.matchId), teamA, teamB, scoreA, scoreB,
-      result: source.result || undefined, date: source.matchDate || undefined,
+      id: String(source.matchId),
+      teamA,
+      teamB,
+      scoreA,
+      scoreB,
+      result: source.result || undefined,
+      date: source.matchDate || undefined,
       status: complete ? "complete" : live ? "live" : "scheduled",
       url: `https://cricclubs.com/GRTA1/viewScorecard.do?clubId=1004528&matchId=${source.matchId}`,
       matchType: source.matchType || "l",
@@ -177,11 +227,15 @@ const table = standingsFromApi(pointsData);
 const matchList = matchesFromApi(matchesData);
 
 const snapshot = {
-  generatedAt: new Date().toISOString(), source: "github-collector", competition: "GRTA 2026 • League 21",
+  generatedAt: new Date().toISOString(),
+  source: "github-collector",
+  competition: "GRTA 2026 • League 21",
   liveMatches: matchList.filter((match) => match.status === "live"),
   recentMatches: matchList.filter((match) => match.status === "complete").slice(0, 8),
-  playoffMatches: matchList.filter((match) => match.matchType !== "l"), standings: table,
-  completedGroupMatches: Math.min(66, Math.round(table.reduce((sum, row) => sum + row.played, 0) / 2)), warnings: [],
+  playoffMatches: matchList.filter((match) => match.matchType !== "l"),
+  standings: table,
+  completedGroupMatches: Math.min(66, Math.round(table.reduce((sum, row) => sum + row.played, 0) / 2)),
+  warnings: [],
 };
 
 await mkdir(dirname(output), { recursive: true });

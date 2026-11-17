@@ -258,7 +258,7 @@
             "url": "{{ home_url }}",
             "image": "{{ '/assets/img/tahmid-zaman-tahi.jpg' | prepend: site.baseurl | prepend: site.url }}",
             "jobTitle": "PhD Researcher",
-            "description": {{ page.description | jsonify }},
+            "description": {{ page.description | default: site.description | strip | jsonify }},
             "affiliation": {
               "@type": "CollegeOrUniversity",
               "name": "Virginia Commonwealth University"
@@ -295,16 +295,16 @@
           "author":
           {
               "@type": "Person",
-              "name": "{{ author_name }}"
+              "name": {{ author_name | jsonify }}
           },
           "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
           "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-          "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-          "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+          "description": {{ page.description | default: site.description | strip | jsonify }},
+          "headline": {{ page.title | default: site.title | jsonify }},
           {% if sameaslinks != blank %}
           "sameAs": {{ sameaslinks | jsonify }},
           {% endif %}
-          "name": "{{ author_name }}",
+          "name": {{ author_name | jsonify }},
           "@context": "https://schema.org"
       }
     </script>

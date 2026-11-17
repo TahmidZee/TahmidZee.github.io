@@ -61,7 +61,10 @@
   <!-- OpenGraph -->
   <meta property="og:site_name" content="{{ title }}">
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta
+    property="og:title"
+    content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ title }} | {{ page.title }}{% else %}{{ title }}{% endif %}"
+  >
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
@@ -71,7 +74,10 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}">
+  <meta
+    name="twitter:title"
+    content="{% if page.seo_title %}{{ page.seo_title }}{% elsif page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}"
+  >
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
@@ -284,23 +290,23 @@
       }
     </script>
   {% else %}
-  <script type="application/ld+json">
-    {
-        "author":
-        {
-            "@type": "Person",
-            "name": "{{ author_name }}"
-        },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
-        {% if sameaslinks != blank %}
-        "sameAs": {{ sameaslinks | jsonify }},
-        {% endif %}
-        "name": "{{ author_name }}",
-        "@context": "https://schema.org"
-    }
-  </script>
+    <script type="application/ld+json">
+      {
+          "author":
+          {
+              "@type": "Person",
+              "name": "{{ author_name }}"
+          },
+          "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+          "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
+          "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
+          "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+          {% if sameaslinks != blank %}
+          "sameAs": {{ sameaslinks | jsonify }},
+          {% endif %}
+          "name": "{{ author_name }}",
+          "@context": "https://schema.org"
+      }
+    </script>
   {% endif %}
 {% endif %}

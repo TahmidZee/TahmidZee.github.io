@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Home
+seo_title: Tahmid Zaman Tahi | PhD Researcher in Wireless Communications & Machine Learning (VCU)
 permalink: /
 description: Research portfolio of Tahmid Zaman Tahi, a PhD researcher building learning-enabled wireless sensing and communication systems.
 profile:
